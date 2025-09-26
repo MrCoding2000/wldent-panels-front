@@ -16,7 +16,10 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@waldent-panels-front/*": ["libs/*"]
+      "@waldent-panels-front/*": ["libs/*/src/index.ts"],
+      "@waldent-panels-front/translate": ["libs/translate/src/index.ts"],
+      "@waldent-panels-front/services": ["libs/services/src/index.ts"],
+      "@waldent-panels-front/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
