@@ -4,7 +4,7 @@ import { ToastService } from '../toast/toast.service';
 import { catchError, switchMap, throwError } from 'rxjs';
 import {AuthService} from "../auth/auth.service";
 
-export const errorHandlerInterceptor: HttpInterceptorFn = (req: HttpRequest<any>, next: HttpHandlerFn) => {
+export const ErrorHandlerInterceptor: HttpInterceptorFn = (req: HttpRequest<any>, next: HttpHandlerFn) => {
   const authService: AuthService = inject(AuthService);
   const toastService: ToastService = inject(ToastService);
 
