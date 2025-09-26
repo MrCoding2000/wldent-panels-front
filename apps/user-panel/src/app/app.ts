@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import {I18nService} from "@waldent-panels-front/i18n";
+import {I18nService} from "@waldent-panels-front/translate";
 
 @Component({
   imports: [RouterModule],
