@@ -6,12 +6,15 @@ import {
 import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
 import {provideHttpClient} from "@angular/common/http";
+import {CORE_CONFIG} from "@waldent-panels-front/services";
+import {UserConfig} from "./project.config";
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
-    provideHttpClient()
+    provideHttpClient(),
+    { provide: CORE_CONFIG, useValue: UserConfig }
   ],
 };
