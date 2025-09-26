@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcome } from './nx-welcome';
+import {Component} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {I18nService} from "@waldent-panels-front/translate";
 
 @Component({
-  imports: [NxWelcome, RouterModule],
+  imports: [RouterModule],
+  standalone: true,
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
-  protected title = 'admin-panel';
+  constructor(private i18n: I18nService) {
+    this.i18n.setLanguage('fa', 'user-panel');
+  }
 }

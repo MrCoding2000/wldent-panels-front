@@ -19,6 +19,7 @@
       "@waldent-panels-front/*": ["libs/*/src/index.ts"],
       "@waldent-panels-front/translate": ["libs/translate/src/index.ts"],
       "@waldent-panels-front/services": ["libs/services/src/index.ts"],
+      "@waldent-panels-front/models": ["libs/models/index.ts"],
       "@waldent-panels-front/ui": ["libs/ui/src/index.ts"]
     }
   },

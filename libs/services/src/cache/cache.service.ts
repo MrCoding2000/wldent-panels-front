@@ -1,6 +1,7 @@
-import {Inject, Injectable, PLATFORM_ID, signal, Signal} from '@angular/core';
+import {inject, Inject, Injectable, PLATFORM_ID, signal, Signal} from '@angular/core';
 import {isPlatformBrowser} from '@angular/common';
-import {ProjectConfig} from "../config/project.config";
+import {ConfigModel} from "@waldent-panels-front/models";
+import {CORE_CONFIG} from "@waldent-panels-front/services";
 
 interface CacheEntry<T> {
   value: Signal<T | null>;
@@ -11,8 +12,8 @@ interface CacheEntry<T> {
   providedIn: 'root',
 })
 export class CacheService {
-  //TODO: private config = inject<ConfigModel>(CORE_CONFIG);
-  private ttl = ProjectConfig.CACHE_TTL * 60 * 1000;
+  readonly config: ConfigModel = inject<ConfigModel>(CORE_CONFIG);
+  private ttl = this.config.CACHE_TTL * 60 * 1000;
   readonly isBrowser: boolean;
   private cache = new Map<string, CacheEntry<any>>();
 

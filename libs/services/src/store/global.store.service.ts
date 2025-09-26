@@ -1,5 +1,5 @@
 import { Injectable, computed, effect, signal } from '@angular/core';
-import { CacheService } from '../cache/cache.service';
+import {CacheService} from "@waldent-panels-front/services";
 
 @Injectable({ providedIn: 'root' })
 export class GlobalStoreService {
