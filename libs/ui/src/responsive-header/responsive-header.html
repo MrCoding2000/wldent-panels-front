@@ -1,0 +1,23 @@
+<section class="responsive-container flex flex-col items-start self-stretch">
+  <header class="header flex justify-between items-center self-stretch">
+    <section class="header-details-container flex justify-center items-center">
+      <button class="icon-container flex flex-col justify-center items-center">
+        <i class="pi pi-{{icon}}"></i>
+      </button>
+      <div class="title-container flex flex-col">
+        <b class="title">{{title}}</b>
+        <small class="sub-title">{{subTitle}}</small>
+      </div>
+    </section>
+    <section class="header-actions-container flex items-center">
+      @for(action of actionsList; track action) {
+        <button class="action-button" (click)="action.command()">
+          <i class="pi pi-{{action.icon}}"></i>
+        </button>
+      }
+      <button (click)="baseService.updateSideBarOpenClosedStatus()" class="bars">
+        <i class="pi pi-bars"></i>
+      </button>
+    </section>
+  </header>
+</section>

@@ -1,18 +1,14 @@
 import {Component, ElementRef, OnInit, QueryList, ViewChildren} from '@angular/core';
 import {I18nService} from "@waldent-panels-front/translate";
-import {DatePipe, NgClass, NgOptimizedImage} from "@angular/common";
-import {FormBuilder, FormGroup, FormsModule} from "@angular/forms";
-import {InputOtp} from "primeng/inputotp";
+import {NgClass} from "@angular/common";
+import {FormBuilder, FormsModule} from "@angular/forms";
 import {ButtonDirective} from "primeng/button";
 
 @Component({
   selector: 'lib-login',
   imports: [
-    NgOptimizedImage,
-    InputOtp,
     FormsModule,
     ButtonDirective,
-    DatePipe,
     NgClass
   ],
   standalone: true,
@@ -21,8 +17,7 @@ import {ButtonDirective} from "primeng/button";
 })
 export class Login implements OnInit {
   code: string[] = Array(4).fill('');
-  timer: number = 59 * 1000;
-  timeLeft: number = 119; // 01:59 = 119 ثانیه
+  timeLeft: number = 119;
   private intervalId: any;
 
   @ViewChildren('otpInput') inputs!: QueryList<ElementRef>;
