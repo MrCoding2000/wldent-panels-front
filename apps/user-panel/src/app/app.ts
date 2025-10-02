@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {I18nService} from "@waldent-panels-front/translate";
-import {MainHeader} from "@waldent-panels-front/ui";
+import {MainHeader, ResponsiveHeader} from "@waldent-panels-front/ui";
 import {BaseService} from "@waldent-panels-front/services";
 import {ActionsListModel, BigButtonActionsListModel} from "@waldent-panels-front/models";
 
 @Component({
-  imports: [RouterModule, MainHeader],
+  imports: [RouterModule, MainHeader, ResponsiveHeader],
   standalone: true,
   selector: 'app-root',
   templateUrl: './app.html',
@@ -20,6 +20,11 @@ export class App {
   ];
   headerBigButtonActionsList: BigButtonActionsListModel[] = [
     {title: 'ایجاد آگهی جدید', icon: 'add', background: '#009975', command: () => this.onAddAdvertisement()}
+  ];
+
+  responsiveHeaderActionsList: ActionsListModel[] = [
+    {icon: 'bell', command: () => this.notificationsHandler()},
+    {icon: 'headphones', command: () => this.supportHandler()},
   ];
 
   constructor(public i18n: I18nService, public baseService: BaseService,) {
@@ -52,5 +57,13 @@ export class App {
    * @private
    */
   private onAddAdvertisement() {
+  }
+
+  /**
+   * TODO:Support Handler
+   * @private
+   */
+  private supportHandler() {
+
   }
 }

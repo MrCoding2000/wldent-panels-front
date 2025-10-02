@@ -1,6 +1,13 @@
-<lib-main-header
-  [title]="baseService.headerPageTitle()"
-  [actionsList]="headerActionsList"
-  [bigButtonActionsList]="headerBigButtonActionsList">
-</lib-main-header>
+<!--<lib-main-header-->
+<!--  [title]="baseService.headerPageTitle()"-->
+<!--  [actionsList]="headerActionsList"-->
+<!--  [bigButtonActionsList]="headerBigButtonActionsList">-->
+<!--</lib-main-header>-->
+<lib-responsive-header
+  [actionsList]="responsiveHeaderActionsList"
+  [title]="'دنتارویال'"
+  [subTitle]="'09012345678'"
+  [icon]="'home'">
+
+</lib-responsive-header>
 <router-outlet></router-outlet>
