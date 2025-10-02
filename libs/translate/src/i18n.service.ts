@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, catchError, forkJoin, Observable, of} from 'rxjs';
 
 export type Language = 'en' | 'fa';
@@ -11,7 +11,8 @@ export class I18nService {
   private currentLang = new BehaviorSubject<Language>('fa');
   private translations: Record<string, any> = {};
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   /**
    * Set Language
@@ -36,7 +37,7 @@ export class I18nService {
    * Translate
    */
   translate(key: string): string {
-    return this.translations[key] || key;
+    return this.getNestedTranslation(this.translations, key) || key;
   }
 
   /**
@@ -59,8 +60,15 @@ export class I18nService {
           return of({});
         })
       ),
-    }).subscribe(({ shared, app }) => {
-      this.translations = { ...shared, ...app };
+    }).subscribe(({shared, app}) => {
+      this.translations = {...shared, ...app};
     });
   }
+
+  getNestedTranslation(obj: any, key: string): string | null {
+    return key.split('.').reduce((acc, key) => {
+      return (acc && acc[key] !== undefined) ? acc[key] : null;
+    }, obj);
+  }
+
 }

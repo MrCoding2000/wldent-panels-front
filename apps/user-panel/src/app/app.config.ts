@@ -12,8 +12,10 @@ export const appConfig: ApplicationConfig = {
     provideRouter(appRoutes),
     provideHttpClient(),
     {provide: CORE_CONFIG, useValue: UserConfig},
-    provideHttpClient(
-      withInterceptors([HttpInterceptor, ErrorHandlerInterceptor])
-    ),
+    // provideHttpClient(
+    //   withInterceptors([HttpInterceptor, ErrorHandlerInterceptor])
+    // ),
   ],
 };
+
+//TODO: INTERCEPTOR COMMENTED FOR TRANSLATE
