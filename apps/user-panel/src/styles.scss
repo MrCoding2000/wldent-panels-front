@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "primeicons/primeicons.css";
 
 @font-face {
   font-family: "IranYekan";
@@ -18,14 +19,17 @@
   font-family: IranYekan;
 }
 
-body {
+html {
   height: 100dvh;
-  width: 100vw;
+  width: 100dvw;
   max-width: 1366px;
-  max-height: 1024px;
   margin: auto;
+  padding: 24px 48px;
+  background: var(--Color-Schema-Surface-Secondary, #F7F9FB);
 }
-
+.pi {
+  font-family: "primeicons" !important;
+}
 .input-field {
   width: 352px;
   height: 48px;

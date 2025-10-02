@@ -33,7 +33,9 @@
             "output": "assets"
           }
         ],
-        "styles": ["apps/user-panel/src/styles.scss"]
+        "styles": [
+          "apps/user-panel/src/styles.scss"
+        ]
       },
       "configurations": {
         "production": {
