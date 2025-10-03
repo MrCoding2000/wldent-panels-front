@@ -19,8 +19,9 @@
   //Main Header
   .main-header-container, .small-header-container {
     width: 70%;
+    max-width: 902px;
     padding: 16px;
-    margin: 20px;
+    margin: 0 8px;
     border-radius: 28px;
     background: var(--Color-Schema-Surface-Primary, #FFF);
     .header-container {
@@ -58,6 +59,7 @@
   //Small Header
   .small-header-container {
     width: 30%;
+    max-width: 320px;
     .icon-container {
       width: 48px;
       height: 48px;
