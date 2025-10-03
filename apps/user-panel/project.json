@@ -19,8 +19,8 @@
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/user-panel/public",
-            "output": "./"
+            "input": "apps/user-panel/src/assets",
+            "output": "assets"
           },
           {
             "glob": "**/*",
