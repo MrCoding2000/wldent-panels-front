@@ -24,12 +24,21 @@ html {
   width: 100dvw;
   max-width: 1366px;
   margin: auto;
-  padding: 24px 48px;
   background: var(--Color-Schema-Surface-Secondary, #F7F9FB);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+body {
+  width: 100%;
+}
+
 .pi {
   font-family: "primeicons" !important;
 }
+
 .input-field {
   width: 352px;
   height: 48px;
@@ -38,6 +47,7 @@ html {
   padding: 8px 16px 8px 16px;
   background: var(--Negatives-Black-4, #0000000A);
   text-align: center;
+
   &:focus {
     outline: none;
     color: #999999;
@@ -53,9 +63,11 @@ html {
   margin: 16px 0;
   padding: 8px 16px 8px 16px;
   color: #ffffff;
+
   &.active {
     background: var(--Color-Schema-Main-Colors-Primary, #009975);
   }
+
   &.disabled {
     background: rgba(119, 119, 119, 0.3);
     cursor: not-allowed;
