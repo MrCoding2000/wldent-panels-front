@@ -1,30 +1,6 @@
 <section class="dashboard-container">
   <!--Advertisement Status-->
-  <section class="advertisement-status">
-    <header class="header-container">
-      <h4 class="page-title">{{i18n.translate('dashboard.advertisement-status')}}</h4>
-    </header>
-    <section class="mt-5 grid grid-cols-2 lg:grid-cols-4 gap-4">
-      @for(card of advertisementStatusList; track card) {
-        <div>
-          <lib-card [title]="card.title" [number]="card.amount" [imageSrc]="card.icon"></lib-card>
-        </div>
-      }
-    </section>
-  </section>
+  <lib-card [sectionTitle]="i18n.translate('dashboard.advertisement-status')" [cardsList]="advertisementStatusList"></lib-card>
   <!--Received Orders Status-->
-  <section class="mt-5">
-    <section class="received-orders-status">
-      <header class="header-container">
-        <h4 class="page-title">{{i18n.translate('dashboard.received-orders-status')}}</h4>
-      </header>
-      <section class="mt-5 grid grid-cols-2 lg:grid-cols-4 gap-4">
-        @for(card of receivedOrdersStatusList; track card) {
-          <div>
-            <lib-card [title]="card.title" [number]="card.amount" [imageSrc]="card.icon"></lib-card>
-          </div>
-        }
-      </section>
-    </section>
-  </section>
+  <lib-card [sectionTitle]="i18n.translate('dashboard.received-orders-status')" [cardsList]="receivedOrdersStatusList"></lib-card>
 </section>

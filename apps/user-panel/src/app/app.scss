@@ -9,7 +9,8 @@
       width: 30%;
       max-width: 320px;
       height: 90dvh;
-      padding: 12px;
+      padding: 16px;
+      margin: 0 8px;
       border-radius: 28px;
       background: var(--Color-Schema-Surface-Primary, #FFF);
     }
@@ -17,8 +18,7 @@
       width: 70%;
       max-width: 902px;
       height: 90dvh;
-      padding: 16px 12px;
-      margin-right: 16px;
+      margin: 0 8px;
       overflow-y: auto;
     }
   }

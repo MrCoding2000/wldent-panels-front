@@ -4,9 +4,10 @@ import {I18nService} from "@waldent-panels-front/translate";
 import {Header, ResponsiveHeader} from "@waldent-panels-front/ui";
 import {BaseService} from "@waldent-panels-front/services";
 import {ActionsListModel, BigButtonActionsListModel} from "@waldent-panels-front/models";
+import {NgStyle} from "@angular/common";
 
 @Component({
-  imports: [RouterModule, Header, ResponsiveHeader],
+  imports: [RouterModule, Header, ResponsiveHeader, NgStyle],
   standalone: true,
   selector: 'app-root',
   templateUrl: './app.html',

@@ -8,3 +8,9 @@
     line-height: 24px; /* 240% */
   }
 }
+
+@media screen and (max-width: 798px){
+  .cards-container {
+    width: 50%;
+  }
+}

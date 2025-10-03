@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {AdvertisementCardModel} from "@waldent-panels-front/models";
 
 @Component({
   selector: 'lib-card',
@@ -8,9 +9,8 @@ import {Component, Input} from '@angular/core';
   styleUrl: './card.scss'
 })
 export class Card {
-  @Input() title!: string;
-  @Input() number!: number;
-  @Input() imageSrc!: string;
+  @Input() cardsList!: AdvertisementCardModel[];
+  @Input() sectionTitle!: string;
 
   constructor() {
   }
