@@ -22,7 +22,6 @@
 .pi {
   font-family: "primeicons" !important;
 }
-
 .input-field {
   width: 352px;
   height: 48px;
@@ -31,7 +30,6 @@
   padding: 8px 16px 8px 16px;
   background: var(--Negatives-Black-4, #0000000A);
   text-align: center;
-
   &:focus {
     outline: none;
     color: #999999;
@@ -47,11 +45,9 @@
   margin: 16px 0;
   padding: 8px 16px 8px 16px;
   color: #ffffff;
-
   &.active {
     background: var(--Color-Schema-Main-Colors-Primary, #009975);
   }
-
   &.disabled {
     background: rgba(119, 119, 119, 0.3);
     cursor: not-allowed;
