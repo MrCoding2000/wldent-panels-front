@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "IranYekan";
+  src: url("../assets/fonts/IRANYekanX-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekanXFaNum";
+  src: url("../assets/fonts/IRANYekanXFaNum-Regular.woff") format("woff");
+}
+
+.header-container {
+  .page-title {
+    color: var(--Color-Schema-On-Surface-Secondary, #555);
+    font-family: IRANYekanXFaNum;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 240% */
+  }
+}
+
+.cards-container {
+  .card-container {
+    max-width: calc(178px + 12px + 32px);
+    height: calc(92px + 12px + 12px);
+    padding: 12px 12px 12px 32px;
+    border-radius: 28px;
+    background: var(--Color-Schema-Surface-Primary, #FFF);
+    .card-details {
+      .card-title {
+        .title {
+          color: var(--Color-Schema-On-Surface-Primary, #222);
+          font-family: IRANYekanXFaNum;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 24px;
+          margin-top: 4px;
+        }
+      }
+    }
+    .number {
+      color: var(--Color-Schema-On-Surface-Primary, #222);
+      font-family: IRANYekanXFaNum;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-container {
+    max-width: calc(300px + 12px + 32px) !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card-title {
+    .title {
+      font-size: 10px !important;
+    }
+  }
+  .number {
+    font-size: 18px !important;
+  }
+}

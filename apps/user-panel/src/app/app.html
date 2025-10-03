@@ -1,25 +1,31 @@
 <section class="layout-container">
-  <lib-header
-    [pageTitle]="baseService.headerPageTitle()"
-    [title]="'دنتارویال'"
-    [subTitle]="'09012345678'"
-    [icon]="'home'"
-    [actionsList]="headerActionsList"
-    [bigButtonActionsList]="headerBigButtonActionsList">
-  </lib-header>
-  <!--<lib-responsive-header-->
-  <!--  [actionsList]="responsiveHeaderActionsList"-->
-  <!--  [title]="'دنتارویال'"-->
-  <!--  [subTitle]="'09012345678'"-->
-  <!--  [icon]="'home'">-->
-  <!--</lib-responsive-header>-->
+  @if (baseService.isMobileSize) {
+    <lib-responsive-header
+      [actionsList]="responsiveHeaderActionsList"
+      [title]="'دنتارویال'"
+      [subTitle]="'09012345678'"
+      [icon]="'home'">
+    </lib-responsive-header>
+  } @else {
+    <lib-header
+      [pageTitle]="baseService.headerPageTitle()"
+      [title]="'دنتارویال'"
+      [subTitle]="'09012345678'"
+      [icon]="'home'"
+      [actionsList]="headerActionsList"
+      [bigButtonActionsList]="headerBigButtonActionsList">
+    </lib-header>
+  }
   <section class="main-container flex justify-center items-center">
     <!--Sidebar-->
-    <section class="sidebar-container"></section>
+    @if (!baseService.isMobileSize) {
+      <section class="sidebar-container"></section>
+    }
     <!--Main Layout-->
-    <main class="main-layout-container">
+    <main
+      [ngStyle]="{'width' : baseService.isMobileSize ? '100%' : '70%'}"
+      class="main-layout-container px-4 lg:px-0">
+      <router-outlet></router-outlet>
     </main>
   </section>
 </section>
-
-<router-outlet></router-outlet>

@@ -4,20 +4,23 @@
   margin: auto;
   background: var(--Color-Schema-Surface-Secondary, #F7F9FB);
   overflow: hidden;
+
   .main-container {
     .sidebar-container {
       width: 30%;
-      max-width: 320px;
+      max-width: calc(320px + 16px + 16px);
       height: 90dvh;
-      padding: 12px;
-      margin-left: 16px;
+      padding: 16px;
+      margin: 0 8px;
       border-radius: 28px;
       background: var(--Color-Schema-Surface-Primary, #FFF);
     }
+
     .main-layout-container {
       width: 70%;
-      max-width: 926px;
+      max-width: calc(902px + 16px + 16px);
       height: 90dvh;
+      margin: 0 8px;
       overflow-y: auto;
     }
   }

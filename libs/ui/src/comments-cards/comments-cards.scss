@@ -1,0 +1,160 @@
+@font-face {
+  font-family: "IranYekan";
+  src: url("../assets/fonts/IRANYekanX-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekanXFaNum";
+  src: url("../assets/fonts/IRANYekanXFaNum-Regular.woff") format("woff");
+}
+
+.comments-cards-container {
+  .comment-card-container {
+    max-width: calc(320px + 12px + 12px);
+    height: calc(408px + 12px + 12px);
+    padding: 12px;
+    border-radius: 20px;
+    background: var(--Color-Schema-Surface-Primary, #FFF);
+
+    .header-container {
+      width: 100%;
+      height: calc(64px + 12px + 12px);
+      padding: 8px;
+      border-radius: 8px;
+      background: var(--Color-Schema-Surface-Tertiary, rgba(0, 0, 0, 0.02));
+
+      .title {
+        overflow: hidden;
+        color: var(--Color-Schema-On-Surface-Primary, #222);
+        text-align: justify;
+        text-overflow: ellipsis;
+        font-family: IRANYekanXFaNum;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px; /* 166.667% */
+      }
+    }
+
+    .user-info-container {
+      .username {
+        color: var(--Color-Schema-On-Surface-Secondary, #555);
+        font-family: IRANYekanXFaNum;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+      }
+
+      .user-label {
+        width: calc(26px + 8px + 8px);
+        height: calc(20px + 2px + 2px);
+        padding: 2px 8px;
+        color: var(--Shades-Primary-10, #003327);
+        font-family: IRANYekanXFaNum;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+        border-radius: 20px;
+        background: var(--Color-Schema-Main-Colors-Mint, #B8EDDC);
+      }
+
+      .comment-date {
+        color: var(--Color-Schema-On-Surface-Secondary, #555);
+        font-family: IRANYekanXFaNum;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 20px;
+      }
+    }
+
+    .rate-container {
+      .p-rating {
+        direction: ltr;
+      }
+
+      ::ng-deep {
+        .p-rating-option {
+          width: 20px;
+          height: 20px;
+        }
+
+        .p-rating-option-active .p-rating-icon {
+          color: #F67F09;
+          font-size: 2rem;
+        }
+      }
+
+      .rate-number {
+        color: var(--Color-Schema-On-Surface-Primary, #222);
+        font-family: IRANYekanXFaNum;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+      }
+    }
+
+    .comment-text {
+      overflow: hidden;
+      color: var(--Color-Schema-On-Surface-Primary, #222);
+      text-align: justify;
+      text-overflow: ellipsis;
+      font-family: IRANYekanXFaNum;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 18px;
+    }
+
+    .points-container {
+      width: 100%;
+
+      .positive-points, .negative-points {
+        width: 100%;
+        height: calc(48px + 8px + 8px);
+        border-radius: 8px;
+        background: var(--Color-Schema-Surface-Tertiary, rgba(0, 0, 0, 0.02));
+
+        .point-title {
+          color: var(--Color-Schema-On-Surface-Secondary, #555);
+          font-family: IRANYekanXFaNum;
+          font-size: 11px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+        }
+
+        .comment {
+          color: var(--Color-Schema-On-Surface-Primary, #222);
+          font-family: IRANYekanXFaNum;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 20px;
+        }
+      }
+    }
+    .like-dislike-container {
+      .like-dislike-number {
+        color: var(--Color-Schema-On-Surface-Tertiary, #999);
+        font-family: IRANYekanXFaNum;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 181.818% */
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .comment-card-container {
+    max-width: 377px !important;
+  }
+}

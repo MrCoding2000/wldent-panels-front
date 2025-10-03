@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "assets/images/user-panel/dashboard/mark.svg",
+    "title": "آگهی های فعال",
+    "amount": 500406
+  },
+  {
+    "icon": "assets/images/user-panel/dashboard/mark.svg",
+    "title": "آگهی های با موجودی صفر",
+    "amount": 480
+  },
+  {
+    "icon": "assets/images/user-panel/dashboard/mark.svg",
+    "title": "آگهی های در انتظار تایید",
+    "amount": 27
+  },
+  {
+    "icon": "assets/images/user-panel/dashboard/mark.svg",
+    "title": "آگهی های رد شده",
+    "amount": 8
+  }
+]

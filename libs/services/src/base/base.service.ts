@@ -5,6 +5,7 @@ import {ApiService} from "@waldent-panels-front/services";
   providedIn: 'root'
 })
 export class BaseService {
+  isMobileSize = window.innerWidth < 1024;
   #headerPageTitle: WritableSignal<string> = signal('');
   #isSideBarOpen: WritableSignal<boolean> = signal(false);
 

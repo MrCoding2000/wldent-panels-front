@@ -4,7 +4,9 @@ import {appRoutes} from './app.routes';
 import {provideHttpClient, withInterceptors} from "@angular/common/http";
 import {CORE_CONFIG, ErrorHandlerInterceptor, HttpInterceptor} from "@waldent-panels-front/services";
 import {UserConfig} from "./project.config";
+import { register } from 'swiper/element/bundle';
 
+register();
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
