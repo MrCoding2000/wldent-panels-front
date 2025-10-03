@@ -19,22 +19,6 @@
   font-family: IranYekan;
 }
 
-html {
-  height: 100dvh;
-  width: 100dvw;
-  max-width: 1366px;
-  margin: auto;
-  background: var(--Color-Schema-Surface-Secondary, #F7F9FB);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-body {
-  width: 100%;
-}
-
 .pi {
   font-family: "primeicons" !important;
 }
