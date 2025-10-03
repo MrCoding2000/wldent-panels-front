@@ -1,0 +1,79 @@
+<swiper-container
+  class="comments-cards-container"
+  slides-per-view="1"
+  space-between="16"
+  breakpoints='{"440": {"slidesPerView": 1}, "768": { "slidesPerView": 2 }, "1440": { "slidesPerView": 3 }}'>
+  @for (slide of commentsCardsSlideData; track slide) {
+    <swiper-slide>
+      <section class="comment-card-container flex flex-col items-end">
+        <header class="header-container flex items-center justify-end self-stretch">
+          <img src="{{slide.commentImage}}" alt="">
+          <h3 class="title mx-2">{{ slide.productName }}</h3>
+        </header>
+        <!--User Info-->
+        <section class="user-info-container flex justify-between items-center self-stretch mt-3">
+          <div class="flex items-center gap-3">
+            <img src="{{slide.userImage}}" alt="">
+            <small class="username">{{ slide.username }}</small>
+            <span class="user-label flex items-start">{{ slide.userLabel }}</span>
+            <span class="comment-date">{{ slide.commentDate }}</span>
+          </div>
+          <button class="user-tag-button">
+            <img src="assets/images/user-panel/dashboard/user-tag.svg" alt="">
+          </button>
+        </section>
+        <!--Rate-->
+        <section class="rate-container w-full flex items-center gap-2 mt-3">
+          <b class="rate-number mt-1">{{ slide.userRate }}</b>
+          <p-rating
+            [dir]="'rtl'"
+            [ngModel]="slide.userRate"
+            [readonly]="true"
+            [stars]="5">
+          </p-rating>
+        </section>
+        <!--Comment Text-->
+        <p class="comment-text my-3">
+          {{ slide.userComment }}
+        </p>
+        <!--Points-->
+        <section class="points-container flex flex-col justify-center">
+          @if (slide.commentPositivePoints) {
+            <section class="positive-points flex flex-col items-end self-stretch gap-2 p-3">
+              <div class="flex items-center self-stretch gap-2">
+                <img src="assets/images/general/check_circle.svg">
+                <b class="point-title">نقاط قوت</b>
+              </div>
+              <b class="comment w-full text-right">{{ slide.commentPositivePoints }}</b>
+            </section>
+          }
+          @if (slide.commentNegativePoints) {
+            <section class="negative-points flex flex-col items-end self-stretch gap-2 p-3 mt-3">
+              <div class="flex items-center self-stretch gap-2">
+                <img src="assets/images/general/cancel.svg">
+                <b class="point-title">نقاط ضعف</b>
+              </div>
+              <b class="comment w-full text-right">{{ slide.commentNegativePoints }}</b>
+            </section>
+          }
+
+        </section>
+        <!--Like Dislike-->
+        <section class="like-dislike-container flex mt-3">
+          <div class="flex items-center self-stretch gap-1 mx-1">
+            <b class="like-dislike-number">{{ slide.commentLikesNumber }}</b>
+            <button>
+              <img src="assets/images/general/thumb_up.svg">
+            </button>
+          </div>
+          <div class="flex items-center self-stretch gap-1 mx-1">
+            <b class="like-dislike-number">{{ slide.commentDislikesNumber }}</b>
+            <button>
+              <img src="assets/images/general/thumb_down.svg">
+            </button>
+          </div>
+        </section>
+      </section>
+    </swiper-slide>
+  }
+</swiper-container>
