@@ -1,0 +1,11 @@
+<ul class="menu flex flex-col items-start justify-items-start">
+  @for (item of menuList; track item) {
+    @if (!isCollapsed) {
+      <li class="flex items-center gap-3">
+        <div class="icon-container" [innerHTML]="sanitizer.bypassSecurityTrustHtml(item.icon)"></div>
+        <span>{{ item.title }}</span>
+      </li>
+    }
+  }
+  <li>
+</ul>

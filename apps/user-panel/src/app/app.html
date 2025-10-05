@@ -13,17 +13,22 @@
       [subTitle]="'09012345678'"
       [icon]="'home'"
       [actionsList]="headerActionsList"
-      [bigButtonActionsList]="headerBigButtonActionsList">
+      [bigButtonActionsList]="headerBigButtonActionsList"
+      [isCollapsed]="baseService.isSideBarCollapsed()"
+      (openClose)="baseService.updateSideBarOpenClosedStatus()">
     </lib-header>
   }
   <section class="main-container flex justify-center items-center">
     <!--Sidebar-->
     @if (!baseService.isMobileSize) {
-      <section class="sidebar-container"></section>
+      <section class="sidebar-container" [class.collapsed]="baseService.isSideBarCollapsed()">
+        <lib-sidebar [menuList]="sidebarMenu" [isCollapsed]="baseService.isSideBarCollapsed()"></lib-sidebar>
+      </section>
     }
     <!--Main Layout-->
     <main
-      [ngStyle]="{'width' : baseService.isMobileSize ? '100%' : '70%'}"
+      [class.collapsed]="baseService.isSideBarCollapsed()"
+      [ngStyle]="{'width' : baseService.isMobileSize ? '100%' : (baseService.isSideBarCollapsed() ? 'calc(100% - 56px)': '70%')}"
       class="main-layout-container px-4 lg:px-0">
       <router-outlet></router-outlet>
     </main>
