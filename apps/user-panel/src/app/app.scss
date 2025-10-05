@@ -14,6 +14,14 @@
       margin: 0 8px;
       border-radius: 28px;
       background: var(--Color-Schema-Surface-Primary, #FFF);
+      color: white;
+      transition: width 1s ease;
+      &.collapsed {
+        width: 76px;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+      }
     }
 
     .main-layout-container {
@@ -22,6 +30,9 @@
       height: 90dvh;
       margin: 0 8px;
       overflow-y: auto;
+      &.collapsed {
+        max-width: calc(1150px + 16px + 16px);
+      }
     }
   }
 }

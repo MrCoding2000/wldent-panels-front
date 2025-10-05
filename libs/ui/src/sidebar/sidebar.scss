@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "IranYekan";
+  src: url("../assets/fonts/IRANYekanX-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekanXFaNum";
+  src: url("../assets/fonts/IRANYekanXFaNum-Regular.woff") format("woff");
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 4px;
+  margin: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  .icon-container {
+    margin-left: 16px;
+  }
+
+ span {
+    white-space: nowrap;
+    transition: opacity 0.2s;
+    color: var(--Color-Schema-On-Surface-Primary, #222);
+    font-family: IRANYekanXFaNum;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+}

@@ -7,14 +7,14 @@ import {ApiService} from "@waldent-panels-front/services";
 export class BaseService {
   isMobileSize = window.innerWidth < 1024;
   #headerPageTitle: WritableSignal<string> = signal('');
-  #isSideBarOpen: WritableSignal<boolean> = signal(false);
+  #isSideBarCollapsed: WritableSignal<boolean> = signal(false);
 
   constructor(private apiService: ApiService) {
   }
 
   // getters
   headerPageTitle = this.#headerPageTitle;
-  isSideBarOpen = this.#isSideBarOpen;
+  isSideBarCollapsed = this.#isSideBarCollapsed;
 
   // setters
   setHeaderPageTitle(title: string) {
@@ -24,6 +24,6 @@ export class BaseService {
 
   // Update
   updateSideBarOpenClosedStatus() {
-    this.isSideBarOpen.update(isSideBarOpen => !isSideBarOpen);
+    this.isSideBarCollapsed.update(isSideBarCollapsed => !isSideBarCollapsed);
   }
 }

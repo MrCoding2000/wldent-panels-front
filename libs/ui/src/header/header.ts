@@ -1,11 +1,12 @@
-import {Component, Input} from '@angular/core';
-import {NgStyle} from "@angular/common";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {NgClass, NgStyle} from "@angular/common";
 import {ActionsListModel, BigButtonActionsListModel} from "@waldent-panels-front/models";
 
 @Component({
   selector: 'lib-header',
   imports: [
-    NgStyle
+    NgStyle,
+    NgClass
   ],
   standalone: true,
   templateUrl: './header.html',
@@ -18,5 +19,7 @@ export class Header {
   @Input() icon!: string;
   @Input() title!: string;
   @Input() subTitle!: string;
+  @Input() isCollapsed: any;
 
+  @Output() openClose: EventEmitter<boolean> = new EventEmitter();
 }
