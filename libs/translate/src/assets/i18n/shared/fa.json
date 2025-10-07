@@ -1,6 +1,7 @@
 {
   "general": {
-    "waldent": "والدنت"
+    "waldent": "والدنت",
+    "all-lists": "لیست کامل"
   },
   "login" : {
     "hello": "سلام!",
@@ -19,5 +20,16 @@
     "edit-number": "ویرایش شماره تماس",
     "otp-resend": "ارسال مجدد کد",
     "otp-resend-at": "درخواست ارسال مجدد کد در"
+  },
+  "optional-card": {
+    "ad-code": "کد آگهی",
+    "ad-registration-date": "تاریخ ثبت آگهی",
+    "edit-ad": "ویرایش آگهی",
+    "review-request": "درخواست بازبینی"
+  },
+  "advertisement": {
+    "reject-ad": "آگهی های رد شده",
+    "ad-date": "تاریخ رد آگهی",
+    "reject-reason": "علت رد آگهی"
   }
 }
