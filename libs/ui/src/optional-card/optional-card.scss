@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "IranYekan";
+  src: url("../assets/fonts/IRANYekanX-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekanXFaNum";
+  src: url("../assets/fonts/IRANYekanXFaNum-Regular.woff") format("woff");
+}
+
+.optional-cards-container {
+  .header-title {
+    padding: 12px 4px 4px 4px;
+    color: var(--Color-Schema-On-Surface-Secondary, #555);
+    font-family: IRANYekanXFaNum;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    .all-lists-button {
+      color: var(--Color-Schema-Main-Colors-Secondary, #0058CC);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+    }
+  }
+  .optional-card-container {
+    max-width: calc(320px + 12px + 12px);
+    height: calc(366px + 12px + 12px);
+    padding: 12px;
+    border-radius: 20px;
+    background: var(--Color-Schema-Surface-Primary, #FFF);
+
+    .header-container {
+      width: 100%;
+      height: calc(64px + 12px + 12px);
+      padding: 8px;
+      border-radius: 8px;
+      background: var(--Color-Schema-Surface-Tertiary, rgba(0, 0, 0, 0.02));
+
+      .title {
+        overflow: hidden;
+        color: var(--Color-Schema-On-Surface-Primary, #222);
+        text-align: justify;
+        text-overflow: ellipsis;
+        font-family: IRANYekanXFaNum;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px; /* 166.667% */
+      }
+    }
+    .optional-card-info-container {
+      .optional-card-info-row-container {
+        //width: 100%;
+        //max-width: 296px;
+        color: var(--Color-Schema-On-Surface-Primary, #222);
+        font-family: IRANYekanXFaNum;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px; /* 166.667% */
+        small {
+          color: var(--Color-Schema-On-Surface-Secondary, #555);
+          font-family: IRANYekanXFaNum;
+          font-size: 11px;
+          font-weight: 400;
+        }
+        .date {
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+    }
+    .action-button-container {
+      .action-button {
+        width: 140px;
+        height: 40px;
+        border-radius: 16px;
+        font-family: IRANYekanXFaNum;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        color: var(--Color-Schema-On-Surface-Primary, #222);
+      }
+      .edit-button {
+        background: rgba(184, 237, 220, 0.2);
+        color: var(--Color-Schema-Main-Colors-Primary, #009975);
+      }
+    }
+  }
+}
+
+.line {
+  height: 1px;
+  border-radius: 4px;
+  background: var(--Color-Schema-On-Surface-Separator, #E6E6E6);
+}
+
+@media screen and (min-width: 768px) {
+  swiper-slide {
+    width: 340px !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .comment-card-container {
+    max-width: 377px !important;
+  }
+}

@@ -1,0 +1,28 @@
+<section class="advertisement-container">
+  <!--Advertisement Status-->
+  <lib-card
+    [sectionTitle]="i18n.translate('dashboard.advertisement-status')"
+    [cardsList]="advertisementStatusList">
+  </lib-card>
+  <!--Reject Advertisements-->
+  <lib-optional-card
+    [optionalCardsSlideData]="rejectAdvertisementData"
+    [optionalCardTemplate]="optionalCardTemplate"
+    [headerTitle]="i18n.translate('advertisement.reject-ad')"
+    [actionButtonTitle]="i18n.translate('optional-card.review-request')"
+    (actionClick)="onReviewRequest($event)">
+  </lib-optional-card>
+</section>
+
+<ng-template #optionalCardTemplate let-slide>
+  <section class="reject-reason-container w-full">
+    <div class="reject-reason-date-container w-full flex justify-between items-center self-stretch">
+      <small>{{ i18n.translate('advertisement.ad-date') }}</small>
+      <b class="date">{{ slide.adRejectDate }}</b>
+    </div>
+    <section class="reject-reason-text-container">
+      <h3 class="reject-reason-title mt-2">{{ i18n.translate('advertisement.reject-reason') }}</h3>
+      <p class="reject-reason-text mt-2">{{ slide.adRejectReason }}</p>
+    </section>
+  </section>
+</ng-template>
