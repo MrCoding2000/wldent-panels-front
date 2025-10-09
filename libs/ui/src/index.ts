@@ -6,3 +6,4 @@ export * from './comments-cards/comments-cards';
 export * from './sidebar/sidebar';
 export * from './optional-card/optional-card';
 export * from './question-answer/question-answer';
+export * from './filter-bar/filter-bar';

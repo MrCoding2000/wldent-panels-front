@@ -34,5 +34,12 @@
   },
   "question-answer-card": {
     "save-question-button": "ثبت پاسخ"
+  },
+  "filter-bar": {
+    "order": "ترتیب نمایش",
+    "newest": "جدیدترین",
+    "oldest": "قدیمی ترین",
+    "bestSeller": "بیشترین فروش",
+    "lowestSales": "کمترین فروش"
   }
 }

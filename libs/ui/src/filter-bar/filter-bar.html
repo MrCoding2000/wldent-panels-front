@@ -1,0 +1,13 @@
+<section class="filter-bar-container flex justify-between items-center self-stretch">
+  <section class="filter-bar-order-container flex items-center gap-4">
+    <b class="filter-bar-order-title">{{ i18n.translate('filter-bar.order') }}</b>
+    @for (orderFilterName of orderFilterNames; track orderFilterName) {
+      <button
+        [ngClass]="orderFilterActive === orderFilterName ? 'orderFilterActive':''"
+        (click)="orderFilterActive = orderFilterName">
+        <b>{{ i18n.translate('filter-bar.' + orderFilterName) }}</b>
+      </button>
+    }
+  </section>
+  <section class="advanced-filter-container"></section>
+</section>

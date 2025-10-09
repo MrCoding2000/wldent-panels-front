@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Card, OptionalCard} from "@waldent-panels-front/ui";
 import {I18nService} from "@waldent-panels-front/translate";
 import {AdvertisementCardModel, OptionalCardsDataModel} from "@waldent-panels-front/models";
-import {DashboardService} from "../dashboard/service/dashboard.service";
-import {AdvertisementService} from "./service/advertisement.service";
+import {DashboardService} from "../../dashboard/service/dashboard.service";
+import {AdvertisementService} from "../service/advertisement.service";
 
 @Component({
   selector: 'app-advertisement',
@@ -12,10 +12,10 @@ import {AdvertisementService} from "./service/advertisement.service";
     OptionalCard
   ],
   standalone: true,
-  templateUrl: './advertisement.html',
-  styleUrl: './advertisement.scss'
+  templateUrl: './reject-advertisement.html',
+  styleUrl: './reject-advertisement.scss'
 })
-export class Advertisement implements OnInit {
+export class RejectAdvertisement implements OnInit {
   advertisementStatusList!: AdvertisementCardModel[];
   rejectAdvertisementData!: OptionalCardsDataModel[];
 
