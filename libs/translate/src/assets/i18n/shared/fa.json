@@ -31,5 +31,8 @@
     "reject-ad": "آگهی های رد شده",
     "ad-date": "تاریخ رد آگهی",
     "reject-reason": "علت رد آگهی"
+  },
+  "question-answer-card": {
+    "save-question-button": "ثبت پاسخ"
   }
 }

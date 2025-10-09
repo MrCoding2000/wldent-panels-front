@@ -1,15 +1,22 @@
 import {Component, OnInit} from '@angular/core';
 import {I18nService} from "@waldent-panels-front/translate";
 import {Card} from "@waldent-panels-front/ui";
-import {AdvertisementCardModel, CommentsDataModel} from "@waldent-panels-front/models";
+import {
+  AdvertisementCardModel,
+  CommentsDataModel,
+  OptionalCardsDataModel,
+  QuestionAnswerDataModel
+} from "@waldent-panels-front/models";
 import {DashboardService} from "./service/dashboard.service";
 import {CommentsCards} from "@waldent-panels-front/ui";
+import {QuestionAnswer} from "@waldent-panels-front/ui";
 
 @Component({
   selector: 'app-dashboard',
   imports: [
     Card,
-    CommentsCards
+    CommentsCards,
+    QuestionAnswer
   ],
   standalone: true,
   templateUrl: './dashboard.html',
@@ -19,6 +26,7 @@ export class Dashboard implements OnInit {
   advertisementStatusList!: AdvertisementCardModel[];
   receivedOrdersStatusList!: AdvertisementCardModel[];
   commentsCardsSlideData!: CommentsDataModel[];
+  questionsAnswerCardsSlideData!: QuestionAnswerDataModel[];
 
 
   constructor(public i18n: I18nService, private dashboardService: DashboardService) {
@@ -28,6 +36,7 @@ export class Dashboard implements OnInit {
     this.getAdvertisementCardsData();
     this.getReceivedOrdersCardsData();
     this.getCommentsCardsSlideData();
+    this.getQuestionAnswerCardsSlideData();
   }
 
   getAdvertisementCardsData() {
@@ -45,6 +54,12 @@ export class Dashboard implements OnInit {
   getCommentsCardsSlideData() {
     this.dashboardService.commentsCardsSlideData().subscribe((data: CommentsDataModel[]) => {
       this.commentsCardsSlideData = data;
+    })
+  }
+
+  getQuestionAnswerCardsSlideData() {
+    this.dashboardService.questionAnswerCardsSlideData().subscribe((data: QuestionAnswerDataModel[]) => {
+      this.questionsAnswerCardsSlideData = data;
     })
   }
 }

@@ -5,4 +5,8 @@
   <lib-card [sectionTitle]="i18n.translate('dashboard.received-orders-status')" [cardsList]="receivedOrdersStatusList"></lib-card>
   <!--Comments Cards-->
   <lib-comments-cards [commentsCardsSlideData]="commentsCardsSlideData"></lib-comments-cards>
+  <lib-question-answer
+    [questionAnswerCardsSlideData]="questionsAnswerCardsSlideData"
+    [actionButtonTitle]="i18n.translate('question-answer-card.save-question-button')">
+  </lib-question-answer>
 </section>
