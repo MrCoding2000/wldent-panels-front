@@ -25,10 +25,12 @@
     "ad-code": "کد آگهی",
     "ad-registration-date": "تاریخ ثبت آگهی",
     "edit-ad": "ویرایش آگهی",
-    "review-request": "درخواست بازبینی"
+    "review-request": "درخواست بازبینی",
+    "create-discount": "ایجاد تخفیف"
   },
   "advertisement": {
     "reject-ad": "آگهی های رد شده",
+    "active-ad": "آگهی های فعال",
     "ad-date": "تاریخ رد آگهی",
     "reject-reason": "علت رد آگهی"
   },

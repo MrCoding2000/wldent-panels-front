@@ -5,5 +5,6 @@ export interface OptionalCardsDataModel {
   adCode: string,
   adDate: string,
   adRejectDate: string,
-  adRejectReason: string
+  adRejectReason: string,
+  detailsList: any[]
 }

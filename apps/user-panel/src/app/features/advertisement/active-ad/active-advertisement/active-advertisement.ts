@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {FilterBar, OptionalCard} from "@waldent-panels-front/ui";
+import {FilterBar, OptionalCard, ToggleSwitch} from "@waldent-panels-front/ui";
 import {I18nService} from "@waldent-panels-front/translate";
 import {AdvertisementService} from "../../service/advertisement.service";
 import {OptionalCardsDataModel} from "@waldent-panels-front/models";
 import {DecimalPipe} from "@angular/common";
 import {FormsModule} from "@angular/forms";
-import {ToggleSwitch} from "primeng/toggleswitch";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-active-advertisement',
@@ -13,8 +13,7 @@ import {ToggleSwitch} from "primeng/toggleswitch";
     FilterBar,
     OptionalCard,
     DecimalPipe,
-    FormsModule,
-    ToggleSwitch
+    FormsModule, ToggleSwitch
   ],
   standalone: true,
   templateUrl: './active-advertisement.html',
@@ -23,8 +22,9 @@ import {ToggleSwitch} from "primeng/toggleswitch";
 export class ActiveAdvertisement implements OnInit {
   activeAdvertisementData!: OptionalCardsDataModel[];
   checked: any;
+  notificationsEnabled!: string;
 
-  constructor(public i18n: I18nService, private advertisementService: AdvertisementService) {
+  constructor(public i18n: I18nService, private advertisementService: AdvertisementService, public sanitizer: DomSanitizer) {
   }
 
   ngOnInit() {
@@ -54,5 +54,13 @@ export class ActiveAdvertisement implements OnInit {
    */
   onEditAdvertisement(id: number) {
 
+  }
+
+  /**
+   * TODO:Change Advertisement Existence Status
+   * @param id
+   */
+  onChangeAdExistenceStatus(id: number): void {
+    console.log(id)
   }
 }
