@@ -20,6 +20,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 24px;
+
     .all-lists-button {
       color: var(--Color-Schema-Main-Colors-Secondary, #0058CC);
       font-size: 14px;
@@ -27,9 +28,13 @@
       font-weight: 500;
     }
   }
-  .optional-card-container {
+
+  .slider-card {
     max-width: calc(320px + 12px + 12px);
-    height: calc(366px + 12px + 12px);
+    height: calc(423px + 12px + 12px);
+  }
+
+  .optional-card-container {
     padding: 12px;
     border-radius: 20px;
     background: var(--Color-Schema-Surface-Primary, #FFF);
@@ -53,6 +58,7 @@
         line-height: 20px; /* 166.667% */
       }
     }
+
     .optional-card-info-container {
       .optional-card-info-row-container {
         //width: 100%;
@@ -69,12 +75,14 @@
           font-size: 11px;
           font-weight: 400;
         }
+
         .date {
           font-size: 12px;
           font-weight: 500;
         }
       }
     }
+
     .action-button-container {
       .action-button {
         width: 140px;
@@ -87,6 +95,7 @@
         line-height: 24px;
         color: var(--Color-Schema-On-Surface-Primary, #222);
       }
+
       .edit-button {
         background: rgba(184, 237, 220, 0.2);
         color: var(--Color-Schema-Main-Colors-Primary, #009975);
@@ -102,7 +111,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  swiper-slide {
+  .slider-card {
     width: 340px !important;
   }
 }

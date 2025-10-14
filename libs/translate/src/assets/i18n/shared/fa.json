@@ -25,14 +25,23 @@
     "ad-code": "کد آگهی",
     "ad-registration-date": "تاریخ ثبت آگهی",
     "edit-ad": "ویرایش آگهی",
-    "review-request": "درخواست بازبینی"
+    "review-request": "درخواست بازبینی",
+    "create-discount": "ایجاد تخفیف"
   },
   "advertisement": {
     "reject-ad": "آگهی های رد شده",
+    "active-ad": "آگهی های فعال",
     "ad-date": "تاریخ رد آگهی",
     "reject-reason": "علت رد آگهی"
   },
   "question-answer-card": {
     "save-question-button": "ثبت پاسخ"
+  },
+  "filter-bar": {
+    "order": "ترتیب نمایش :",
+    "newest": "جدیدترین",
+    "oldest": "قدیمی ترین",
+    "bestSeller": "بیشترین فروش",
+    "lowestSales": "کمترین فروش"
   }
 }

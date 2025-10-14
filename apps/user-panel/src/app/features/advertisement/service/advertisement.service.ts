@@ -13,4 +13,8 @@ export class AdvertisementService {
   advertisementRejectCardsData(): Observable<OptionalCardsDataModel[]> {
     return this.apiService.get<OptionalCardsDataModel[]>('assets/mock/advertisement/reject-advertisement-data.json')
   }
+
+  advertisementActiveCardsData(): Observable<OptionalCardsDataModel[]> {
+    return this.apiService.get<OptionalCardsDataModel[]>('assets/mock/advertisement/active-advertisement-data.json')
+  }
 }

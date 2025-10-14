@@ -67,7 +67,7 @@ export class App implements OnInit {
   }
 
   /**
-   * TODO:Add Advertisement
+   * TODO:Add RejectAdvertisement
    * @private
    */
   private onAddAdvertisement() {

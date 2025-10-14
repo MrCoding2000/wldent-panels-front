@@ -2,7 +2,7 @@ import {Component, CUSTOM_ELEMENTS_SCHEMA, EventEmitter, Input, Output, Template
 import {Rating} from "primeng/rating";
 import {FormsModule} from "@angular/forms";
 import {I18nService} from "@waldent-panels-front/translate";
-import {NgTemplateOutlet} from "@angular/common";
+import {NgClass, NgStyle, NgTemplateOutlet} from "@angular/common";
 import {OptionalCardsDataModel} from "@waldent-panels-front/models";
 
 @Component({
@@ -10,7 +10,9 @@ import {OptionalCardsDataModel} from "@waldent-panels-front/models";
   imports: [
     Rating,
     FormsModule,
-    NgTemplateOutlet
+    NgTemplateOutlet,
+    NgStyle,
+    NgClass
   ],
   standalone: true,
   templateUrl: './optional-card.html',
@@ -22,6 +24,7 @@ export class OptionalCard {
   @Input() optionalCardTemplate!: TemplateRef<any>;
   @Input() headerTitle!: string;
   @Input() actionButtonTitle!: string;
+  @Input() isSliderCard: boolean = false;
 
   @Output() actionClick: EventEmitter<number> = new EventEmitter();
   constructor(public i18n: I18nService) {

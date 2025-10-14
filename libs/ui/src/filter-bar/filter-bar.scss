@@ -1,0 +1,121 @@
+@font-face {
+  font-family: "IranYekan";
+  src: url("../assets/fonts/IRANYekanX-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANYekanXFaNum";
+  src: url("../assets/fonts/IRANYekanXFaNum-Regular.woff") format("woff");
+}
+
+.filter-bar-container {
+  height: calc(48px + 16px + 16px);
+  padding: 16px;
+  border-radius: 28px;
+  background: var(--Color-Schema-Surface-Primary, #FFF);
+
+  .filter-bar-order-container {
+    b, .filter-bar-order-title {
+      color: var(--Color-Schema-On-Surface-Primary, #222);
+      font-family: IRANYekanXFaNum;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+
+      b {
+        font-size: 14px;
+      }
+    }
+
+    .filter-bar-order-buttons-container {
+      width: calc(100% - 100px);
+      display: flex;
+      overflow-x: auto;
+      padding-bottom: 8px;
+
+      button {
+        min-width: 100px;
+        height: 48px;
+        margin: 0 4px;
+        border-radius: 20px;
+        padding: 0 4px;
+
+        &.order-filter-active {
+          transition: 1s;
+          background: var(--Color-Schema-Surface-Secondary, #F7F9FB);
+
+          b {
+            color: #009975;
+          }
+        }
+      }
+    }
+
+    .filter-bar-order-title {
+      width: 100px;
+    }
+
+    .filter-bar-order-title {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+    }
+  }
+
+  .advanced-filter-container {
+    .search-box-container {
+      width: 70%;
+      min-width: calc(168px + 16px + 16px);
+      height: calc(32px + 8px + 8px);
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: var(--Color-Schema-Surface-Tertiary, rgba(0, 0, 0, 0.02));
+      box-shadow: 0 1px 2px 2px var(--Opacity-Black-8, rgba(0, 0, 0, 0.08)) inset;
+
+      .search-box-input {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: var(--Color-Schema-On-Surface-Tertiary, #999);
+        background: transparent;
+
+        &:focus {
+          border: none;
+          outline: none;
+        }
+
+        &::placeholder {
+          color: var(--Color-Schema-On-Surface-Tertiary, #999);
+          text-align: right;
+          font-family: IRANYekanXFaNum;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 24px;
+        }
+      }
+    }
+
+    .advanced-search-button-container {
+      .advanced-search-button {
+        margin: 0 1em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .advanced-filter-container {
+    width: 100%;
+  }
+  .filter-bar-order-container {
+    width: 100%;
+  }
+  .filter-bar-container {
+    height: calc(112px + 16px + 16px);
+  }
+}
