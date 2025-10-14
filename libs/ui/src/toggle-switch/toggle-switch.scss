@@ -28,5 +28,8 @@
   font-size: 11px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px; /* 181.818% */
+  line-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
