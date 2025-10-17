@@ -1,0 +1,112 @@
+@font-face {
+  font-family: "IRANYekanXFaNum";
+  src: url("../../../../assets/fonts/IRANYekanXFaNum-Regular.woff") format("woff");
+}
+
+.edit-ad-container {
+  .ad-info-container {
+    width: 100%;
+    border-radius: 20px;
+    padding: 8px 12px 4px 12px;
+    background: #ffffff;
+    gap: 16px;
+
+    .ad-info-header-container {
+      .buttons-container {
+        button {
+          font-family: IRANYekanXFaNum;
+          font-weight: 500;
+          line-height: 24px;
+          letter-spacing: 0;
+          padding: 8px 16px;
+          border-radius: 20px;
+          background: var(--Color-Schema-Surface-Tertiary, #00000005);
+        }
+
+        .edit-button {
+          color: #ffffff;
+          background: var(--Color-Schema-Main-Colors-Primary, #009975);
+        }
+      }
+    }
+
+    .ad-main-info-container {
+      .ad-main-info {
+        height: 36px;
+        padding: 4px 8px;
+        border-radius: 12px;
+        background: var(--Color-Schema-Surface-Tertiary, #00000005);
+        .title {
+          color: var(--Color-Schema-On-Surface-Secondary, #555555);
+        }
+        .value {
+          font-family: IRANYekanXFaNum;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 20px;
+          letter-spacing: 0;
+          color: var(--Color-Schema-On-Surface-Primary, #222222);
+        }
+      }
+    }
+
+    .product-image-container {
+      .product-header {
+        .product-title {
+          font-family: IRANYekanXFaNum;
+          font-weight: 400;
+          font-size: 11px;
+          line-height: 20px;
+          letter-spacing: 0;
+        }
+      }
+      .image-container {
+        height: 112px;
+        opacity: 1;
+        border-radius: 12px;
+        padding: 2px;
+        background: var(--Color-Schema-Surface-Tertiary, #00000005);
+        .image-info {
+          padding: 6px;
+          .title {
+            font-family: IRANYekanXFaNum;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: 0;
+            color: var(--Color-Schema-On-Surface-Secondary, #555555);
+          }
+          .trash {
+            width: 15px;
+            height: 17px;
+          }
+        }
+      }
+    }
+    .ad-complete-info-container {
+      .ad-complete-info {
+        height: 36px;
+        padding: 4px 8px;
+        border-radius: 12px;
+        background: var(--Color-Schema-Surface-Tertiary, #00000005);
+        .title {
+          color: var(--Color-Schema-On-Surface-Secondary, #555555);
+        }
+        .value {
+          font-family: IRANYekanXFaNum;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 20px;
+          letter-spacing: 0;
+          color: var(--Color-Schema-On-Surface-Primary, #222222);
+        }
+      }
+    }
+  }
+}
+
+.line {
+  height: 1px;
+  border-radius: 4px;
+  background: var(--Color-Schema-On-Surface-Separator, #E6E6E6);
+}

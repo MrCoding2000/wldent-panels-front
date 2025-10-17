@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FilterBar, OptionalCard, ToggleSwitch} from "@waldent-panels-front/ui";
 import {I18nService} from "@waldent-panels-front/translate";
-import {AdvertisementService} from "../../service/advertisement.service";
+import {AdvertisementService} from "../service/advertisement.service";
 import {OptionalCardsDataModel} from "@waldent-panels-front/models";
 import {DecimalPipe} from "@angular/common";
 import {FormsModule} from "@angular/forms";

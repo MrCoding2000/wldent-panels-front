@@ -15,5 +15,6 @@ import {CommentsDataModel} from "@waldent-panels-front/models";
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class CommentsCards {
+  @Input() title!: string;
   @Input() commentsCardsSlideData!: CommentsDataModel[];
 }
