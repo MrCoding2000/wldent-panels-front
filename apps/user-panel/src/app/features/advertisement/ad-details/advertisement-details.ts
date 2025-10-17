@@ -6,7 +6,7 @@ import {CommentsDataModel, EditAdvertisementDataModel, QuestionAnswerDataModel} 
 import {AdvertisementService} from "../service/advertisement.service";
 
 @Component({
-  selector: 'app-edit-advertisement',
+  selector: 'app-ad-details',
   imports: [
     ToggleSwitch,
     DecimalPipe,
