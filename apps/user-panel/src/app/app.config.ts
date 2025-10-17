@@ -1,5 +1,5 @@
 import {ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection,} from '@angular/core';
-import {provideRouter} from '@angular/router';
+import {provideRouter, withComponentInputBinding} from '@angular/router';
 import {appRoutes} from './app.routes';
 import {provideHttpClient, withInterceptors} from "@angular/common/http";
 import {CORE_CONFIG, ErrorHandlerInterceptor, HttpInterceptor} from "@waldent-panels-front/services";
@@ -14,6 +14,9 @@ export const appConfig: ApplicationConfig = {
     provideRouter(appRoutes),
     provideHttpClient(),
     {provide: CORE_CONFIG, useValue: UserConfig},
+    provideRouter(appRoutes,
+      withComponentInputBinding()
+    )
     // provideHttpClient(
     //   withInterceptors([HttpInterceptor, ErrorHandlerInterceptor])
     // ),
