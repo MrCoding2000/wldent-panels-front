@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {CommentsCards, QuestionAnswer, ToggleSwitch} from "@waldent-panels-front/ui";
+import {Component, Input, OnInit} from '@angular/core';
+import {CommentsCards, ProductDetails, QuestionAnswer, ToggleSwitch} from "@waldent-panels-front/ui";
 import {DecimalPipe} from "@angular/common";
 import {I18nService} from "@waldent-panels-front/translate";
 import {CommentsDataModel, EditAdvertisementDataModel, QuestionAnswerDataModel} from "@waldent-panels-front/models";
@@ -11,18 +11,15 @@ import {AdvertisementService} from "../service/advertisement.service";
     ToggleSwitch,
     DecimalPipe,
     QuestionAnswer,
-    CommentsCards
+    CommentsCards,
+    ProductDetails
   ],
   standalone: true,
-  templateUrl: './edit-advertisement.html',
-  styleUrl: './edit-advertisement.scss'
+  templateUrl: './advertisement-details.html',
+  styleUrl: './advertisement-details.scss'
 })
-export class EditAdvertisement implements OnInit {
-  editAdActionButtons: { icon: string, title: string }[] = [
-    {icon: 'edit', title: 'حذف'},
-    // { icon: 'edit', title: 'ارشیو کردن آگهی' },
-    {icon: 'edit', title: 'افزودن تخفیف'},
-  ];
+export class AdvertisementDetails implements OnInit {
+  @Input() advertisementCode!: string;
   adMainInfoList: string[] = ['adCost', 'adCode', 'adDate', 'adExistenceNumber'];
   adCompleteInfoList: string[] = ['productSellNumbers', 'productRate', 'commentNumbers', 'questionNumbers', 'off', 'imageNumbers', 'videoNumbers', 'isStock'];
   questionsAnswerCardsSlideData!: QuestionAnswerDataModel[];
@@ -76,5 +73,12 @@ export class EditAdvertisement implements OnInit {
     this.advertisementService.commentsCardsSlideData().subscribe((data: CommentsDataModel[]) => {
       this.commentsCardsSlideData = data;
     })
+  }
+
+  /**
+   * TODO: Navigate To Edit Advertisement Page
+   */
+  onNavigateToEditAdvertisementPage() {
+    // this.advertisementCode
   }
 }

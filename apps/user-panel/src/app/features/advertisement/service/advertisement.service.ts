@@ -34,4 +34,8 @@ export class AdvertisementService {
   advertisementData(): Observable<EditAdvertisementDataModel> {
     return this.apiService.get<EditAdvertisementDataModel>('assets/mock/advertisement/edit-advertisement-data.json');
   }
+
+  uploadProductImage(formData: FormData) {
+    return this.apiService.get('');
+  }
 }
