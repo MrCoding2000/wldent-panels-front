@@ -5,6 +5,7 @@ import {provideHttpClient, withInterceptors} from "@angular/common/http";
 import {CORE_CONFIG, ErrorHandlerInterceptor, HttpInterceptor} from "@waldent-panels-front/services";
 import {UserConfig} from "./project.config";
 import { register } from 'swiper/element/bundle';
+import {DialogService} from "primeng/dynamicdialog";
 
 register();
 export const appConfig: ApplicationConfig = {
@@ -13,6 +14,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({eventCoalescing: true}),
     provideRouter(appRoutes),
     provideHttpClient(),
+    DialogService,
     {provide: CORE_CONFIG, useValue: UserConfig},
     provideRouter(appRoutes,
       withComponentInputBinding()

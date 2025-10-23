@@ -3,13 +3,16 @@ import {ToggleSwitch} from "@waldent-panels-front/ui";
 import {AdvertisementService} from "../service/advertisement.service";
 import {FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {NgClass} from "@angular/common";
+import {Dialog} from "primeng/dialog";
+import {WaldentDialogService} from "@waldent-panels-front/services";
 
 @Component({
   selector: 'app-add-ad-details',
   imports: [
     ToggleSwitch,
     ReactiveFormsModule,
-    NgClass
+    NgClass,
+    Dialog
   ],
   standalone: true,
   templateUrl: './add-edit-advertisement.html',
@@ -20,7 +23,10 @@ export class AddEditAdvertisement implements OnInit {
   progress: number = 0;
   addEditAdvertisementFormGroup!: FormGroup;
 
-  constructor(private advertisementService: AdvertisementService, private formBuilder: FormBuilder) {
+  constructor(
+    private advertisementService: AdvertisementService,
+    private formBuilder: FormBuilder,
+    private waldentDialogService: WaldentDialogService) {
   }
 
   ngOnInit() {

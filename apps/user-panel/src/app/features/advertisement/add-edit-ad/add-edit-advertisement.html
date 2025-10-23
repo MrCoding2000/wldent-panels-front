@@ -33,9 +33,11 @@
         <!--TODO-->
         <header class="flex justify-between">
           <h6 class="title">تصاویر محصول</h6>
-          <div class="rule">
-            <span> تصاویر محصول شما باید<span>منطبق با قواعد والدنت </span> باشد. </span>
-            <button (click)="onShowImageUploadRules()">question mark</button>
+          <div class="rule flex items-center">
+            <span> تصاویر محصول شما باید <span class="waldent-rules"> منطبق با قواعد والدنت </span> باشد. </span>
+            <button class="mr-2" (click)="onShowImageUploadRules()">
+              <img src="assets/images/general/question_mark.svg" alt=""/>
+            </button>
           </div>
         </header>
         <!--TODO: Image Uploader-->
@@ -144,7 +146,7 @@
                 حذف
               </button>
             }
-<!--            <hr class="horizontal-line">-->
+            <!--            <hr class="horizontal-line">-->
           </div>
         }
       </section>
