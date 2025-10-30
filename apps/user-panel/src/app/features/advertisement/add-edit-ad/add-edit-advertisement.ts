@@ -1,11 +1,10 @@
-import {Component, OnInit, Type} from '@angular/core';
+import {Component, Input, OnInit, Type} from '@angular/core';
 import {ToggleSwitch} from "@waldent-panels-front/ui";
 import {AdvertisementService} from "../service/advertisement.service";
 import {FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {NgClass} from "@angular/common";
 import {Dialog} from "primeng/dialog";
 import {WaldentDialogService} from "@waldent-panels-front/services";
-import {AddEditAdvertisementFinalCheck} from "./add-edit-advertisement-final-check/add-edit-advertisement-final-check";
 
 @Component({
   selector: 'app-add-ad-details',
@@ -24,6 +23,8 @@ export class AddEditAdvertisement implements OnInit {
   progress: number = 0;
   addEditAdvertisementFormGroup!: FormGroup;
 
+  @Input() id!: number;
+
   constructor(
     private advertisementService: AdvertisementService,
     private formBuilder: FormBuilder,
@@ -32,6 +33,7 @@ export class AddEditAdvertisement implements OnInit {
 
   ngOnInit() {
     this.createAddEditAdvertisementForm();
+    this.getAdvertisementDataById();
   }
 
   createAddEditAdvertisementForm(): void {
@@ -162,5 +164,12 @@ export class AddEditAdvertisement implements OnInit {
     console.log(this.addEditAdvertisementFormGroup.value);
   }
 
-  protected readonly AddEditAdvertisementFinalCheck = AddEditAdvertisementFinalCheck;
+  /**
+   * TODO: MODEL AND INTEGRATION
+   */
+  getAdvertisementDataById() {
+    this.advertisementService.adverstisementDataById(1).subscribe((data: any) => {
+      this.addEditAdvertisementFormGroup.setValue(data);
+    })
+  }
 }

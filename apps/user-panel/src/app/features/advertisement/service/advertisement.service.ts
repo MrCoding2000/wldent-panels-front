@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {ApiService} from "@waldent-panels-front/services";
 import {Observable} from "rxjs";
 import {
+  AdvertisementCardModel,
   CommentsDataModel,
   EditAdvertisementDataModel,
   OptionalCardsDataModel,
@@ -37,5 +38,9 @@ export class AdvertisementService {
 
   uploadProductImage(formData: FormData) {
     return this.apiService.get('');
+  }
+
+  adverstisementDataById(id: number): Observable<any> {
+    return this.apiService.get(`assets/mock/advertisement/edit-advertisement-data.json`);
   }
 }
