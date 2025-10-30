@@ -1,0 +1,155 @@
+<section class="add-edit-advertisement-container">
+  <header class="add-edit-advertisement-header-container w-full hidden sm:flex justify-between items-center">
+    <h5 class="title">ویژگی های اصلی کالا</h5>
+    <div class="buttons-container">
+      <button>لغو</button>
+      <!--TODO: disabled-->
+      <button class="submit disabled" (click)="onSubmitAddEditAdvertisementForm()">ثبت آگهی</button>
+    </div>
+  </header>
+  <form [formGroup]="addEditAdvertisementFormGroup" class="add-edit-form-container my-5">
+    <!--Product Main Feature Box-->
+    <section class="product-main-feature-box-container">
+      <div class="input-row-container flex flex-col my-4">
+        <label>نام محصول *</label>
+        <input formControlName="productName" placeholder="برای مثال: مسواک">
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+        <div class="input-row-container flex flex-col">
+          <label>قیمت(تومان) *</label>
+          <input formControlName="productCost" placeholder="برای مثال: 100.000">
+        </div>
+        <div class="input-row-container flex flex-col">
+          <label>موجودی *</label>
+          <input formControlName="productInventory" placeholder="برای مثال: 10">
+        </div>
+      </div>
+      <section class="my-4 stock-product">
+        <h6 class="mb-2 title">محصول کارکرده</h6>
+        <lib-toggle-switch [title]="'خیر'" (checkedChange)="onChangeIsStockGoodsStatus($event)"></lib-toggle-switch>
+      </section>
+      <hr class="line">
+      <section class="product-images-container my-4">
+        <!--TODO-->
+        <header class="flex justify-between">
+          <h6 class="title">تصاویر محصول</h6>
+          <div class="rule flex items-center">
+            <span> تصاویر محصول شما باید <span class="waldent-rules"> منطبق با قواعد والدنت </span> باشد. </span>
+<!--            <button class="mr-2" (click)="onShowImageUploadRules(AddEditAdvertisementFinalCheck, 'test')">-->
+<!--              <img src="assets/images/general/question_mark.svg" alt=""/>-->
+<!--            </button>-->
+          </div>
+        </header>
+        <!--TODO: Image Uploader-->
+        <div class="images-container">
+          <input (change)="onUploadImage($event)" style="display: none" type="file" accept="image/*"
+                 #isoMetricImageUpload/>
+          <button class="upload-image-button flex flex-col items-center justify-evenly mt-2"
+                  (click)="isoMetricImageUpload.click()">
+            <!--            <app-progress-bar *ngIf="progress > 0"-->
+            <!--                              [progress]="progress"></app-progress-bar>-->
+            <img src="assets/images/user-panel/advertisement/image_arrow_up.svg" alt="">
+            <small class="image-title block w-full text-right">شاخص</small>
+          </button>
+          <!--          <img class="iso-metric-image" *ngIf="addEditIsoMetricForm.get('photo')?.value"-->
+          <!--               [src]='photoPreviewUrl' alt=""/>-->
+        </div>
+      </section>
+    </section>
+    <!--Discount-->
+    <header class="add-edit-advertisement-header-container w-full flex justify-between items-center my-4">
+      <h5 class="title">تخفیف ها</h5>
+    </header>
+    <section class="off-box-container">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+        <div class="input-row-container flex flex-col">
+          <label>تخفیف ریالی(تومان)</label>
+          <input formControlName="discount" placeholder="برای مثال: 100.000">
+        </div>
+        <div class="input-row-container flex flex-col">
+          <label>تخفیف به درصد</label>
+          <input formControlName="percentDiscount" placeholder="برای مثال: 10%">
+        </div>
+      </div>
+      <hr class="line">
+      <div class="mt-4">
+        <lib-toggle-switch [title]="'تخفیف مدت دار'"
+                           (checkedChange)="onChangeLongDiscountStatus($event)"></lib-toggle-switch>
+      </div>
+    </section>
+    <!--Other Features-->
+    <header class="add-edit-advertisement-header-container w-full flex justify-between items-center my-4">
+      <h5 class="title">سایر ویژگی ها</h5>
+    </header>
+    <section class="other-features-box-container" formArrayName="featuresList">
+      @for (feature of featuresList.controls; track feature; let index = $index) {
+        @if (index === featuresList.length - 1 && index !== 0) {
+          <hr class="line">
+        }
+        <div class="grid grid-cols-1 sm:grid-cols-2  lg:flex items-end gap-4 my-4" [formGroupName]="index">
+          <div class="input-row-container flex flex-col lg:w-5/12">
+            <label>عنوان ویژگی *</label>
+            <input placeholder="برای مثال: 100.000" formControlName="featureTitle">
+          </div>
+          <div class="input-row-container flex flex-col lg:w-5/12">
+            <label>مقدار ویژگی *</label>
+            <input placeholder="برای مثال: 10%" formControlName="featureValue">
+          </div>
+          @if (index === featuresList.length - 1) {
+            <button
+              class="button sm:col-span-full lg:w-2/12"
+              [ngClass]="lastFeatureItemInvalid ? 'disabled-button':'add-button'"
+              (click)="onCreateFeatureItem()"
+              [disabled]="lastFeatureItemInvalid">
+              ثبت
+            </button>
+          } @else {
+            <button type="button" class="button remove-button sm:col-span-full lg:w-2/12"
+                    (click)="onRemoveFeatureItem(index)">
+              حذف
+            </button>
+          }
+        </div>
+      }
+    </section>
+    <!--Complete Information-->
+    <header class="add-edit-advertisement-header-container w-full flex justify-between items-center my-4">
+      <h5 class="title">اطلاعات تکمیلی</h5>
+    </header>
+    <section class="complete-box-container w-full">
+      <div class="input-row-container flex flex-col mb-4">
+        <label>توضیحات</label>
+        <textarea class="description" placeholder="توضیحات محصول شما"></textarea>
+      </div>
+      <hr class="line">
+      <h5 class="my-4">تگ ها</h5>
+      <section class="grid grid-cols-2 gap-4" formArrayName="tagsList">
+        @for (tag of tagsList.controls; track tag; let index = $index) {
+          <div class="grid grid-cols-3 items-end justify-start gap-3" [formGroupName]="index">
+            <div class="input-row-container flex flex-col lg:col-span-2">
+              <label>عنوان تگ</label>
+              <input placeholder="برای مثال: مسواک" formControlName="tagName">
+            </div>
+            @if (index === tagsList.length - 1) {
+              <button
+                class="button sm:col-span-full lg:col-span-1"
+                [ngClass]="lastTagItemInvalid ? 'disabled-button':'add-button'"
+                (click)="onCreateTagItem()"
+                [disabled]="lastTagItemInvalid">
+                ثبت
+              </button>
+            } @else {
+              <button
+                type="button"
+                class="button sm:col-span-full lg:col-span-1 remove-button"
+                (click)="onRemoveTagItem(index)">
+                حذف
+              </button>
+            }
+            <!--            <hr class="horizontal-line">-->
+          </div>
+        }
+      </section>
+    </section>
+  </form>
+</section>

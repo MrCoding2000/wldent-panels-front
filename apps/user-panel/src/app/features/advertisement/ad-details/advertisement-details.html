@@ -1,0 +1,24 @@
+<section class="edit-ad-container">
+  <!--Advertisement Information-->
+  <lib-product-details
+    [productMainInfoList]="adMainInfoList"
+    [productCompleteInfoList]="adCompleteInfoList"
+    [cost]="advertisementData.cost"
+    [productImages]="advertisementData.images"
+    [productName]="advertisementData.name"
+    [isProductExist]="advertisementData.isExist"
+    (deleteImageId)="onDeleteProductImage($event)"
+    (productExistenceCheck)="onChangeAdExistenceStatus($event)"
+    (editProduct)="onNavigateToEditAdvertisementPage()">
+  </lib-product-details>
+  <!--Questions-->
+  <lib-question-answer
+    [questionAnswerCardsSlideData]="questionsAnswerCardsSlideData"
+    [actionButtonTitle]="i18n.translate('question-answer-card.save-question-button')">
+  </lib-question-answer>
+  <!--Comments-->
+  <lib-comments-cards
+    [commentsCardsSlideData]="commentsCardsSlideData"
+    [title]="i18n.translate('question-answer-card.save-question-button')">
+  </lib-comments-cards>
+</section>
