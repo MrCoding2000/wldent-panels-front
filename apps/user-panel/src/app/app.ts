@@ -7,9 +7,10 @@ import {UserBaseService} from "./core/service/base.service";
 import {ActionsListModel, BigButtonActionsListModel} from "@waldent-panels-front/models";
 import {NgStyle} from "@angular/common";
 import {SidebarModel} from "@waldent-panels-front/models";
+import {Drawer} from "primeng/drawer";
 
 @Component({
-  imports: [RouterModule, Header, ResponsiveHeader, NgStyle, Sidebar],
+  imports: [RouterModule, Header, ResponsiveHeader, NgStyle, Sidebar, Drawer],
   standalone: true,
   selector: 'app-root',
   templateUrl: './app.html',
@@ -30,6 +31,7 @@ export class App implements OnInit {
     {icon: 'headphones', command: () => this.supportHandler()},
   ];
   sidebarMenu!: SidebarModel[];
+  isSidebarOpen = true;
 
   constructor(public i18n: I18nService, public baseService: BaseService, private userBaseService: UserBaseService) {
     this.i18n.setLanguage('fa', 'user-panel');
@@ -79,5 +81,13 @@ export class App implements OnInit {
    */
   private supportHandler() {
 
+  }
+
+  /**
+   * Change SideBar Open Status
+   */
+  onChangeSideBarOpenStatus() {
+    console.log(this.isSidebarOpen);
+    this.isSidebarOpen = !this.isSidebarOpen;
   }
 }

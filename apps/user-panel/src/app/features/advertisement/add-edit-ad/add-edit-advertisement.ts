@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Type} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, QueryList, Type, ViewChild, ViewChildren} from '@angular/core';
 import {ToggleSwitch} from "@waldent-panels-front/ui";
 import {AdvertisementService} from "../service/advertisement.service";
 import {FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
@@ -23,6 +23,8 @@ export class AddEditAdvertisement implements OnInit {
   progress: number = 0;
   addEditAdvertisementFormGroup!: FormGroup;
 
+  @ViewChildren('tagInput') tagInputs!: QueryList<ElementRef<HTMLInputElement>>;
+
   @Input() id!: number;
 
   constructor(
@@ -33,7 +35,7 @@ export class AddEditAdvertisement implements OnInit {
 
   ngOnInit() {
     this.createAddEditAdvertisementForm();
-    this.getAdvertisementDataById();
+    if (this.id) this.getAdvertisementDataById();
   }
 
   createAddEditAdvertisementForm(): void {
@@ -150,6 +152,10 @@ export class AddEditAdvertisement implements OnInit {
    */
   onCreateTagItem(): void {
     this.tagsList.push(this.createTagItem());
+    setTimeout(() => {
+      this.focusLastTagInput();
+      this.scrollToLastTag();
+    });
   }
 
   /**
@@ -168,8 +174,37 @@ export class AddEditAdvertisement implements OnInit {
    * TODO: MODEL AND INTEGRATION
    */
   getAdvertisementDataById() {
-    this.advertisementService.adverstisementDataById(1).subscribe((data: any) => {
+    this.advertisementService.adverstisementDataById(this.id).subscribe((data: any) => {
       this.addEditAdvertisementFormGroup.setValue(data);
     })
+  }
+
+  private focusLastTagInput(): void {
+    const inputs = this.tagInputs.toArray();
+    if (inputs.length > 0) {
+      const lastInput = inputs[inputs.length - 1];
+      lastInput.nativeElement.focus();
+    }
+  }
+
+  private scrollToLastTag(): void {
+    const inputs = this.tagInputs.toArray();
+    if (inputs.length > 0) {
+      const lastInput = inputs[inputs.length - 1];
+      lastInput.nativeElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'nearest'
+      });
+    }
+  }
+
+  onTagInputKeydown(event: KeyboardEvent, index: number): void {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      if (index === this.tagsList.length - 1 && !this.lastTagItemInvalid) {
+        this.onCreateTagItem();
+      }
+    }
   }
 }

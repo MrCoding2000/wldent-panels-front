@@ -4,6 +4,7 @@ import {DecimalPipe} from "@angular/common";
 import {I18nService} from "@waldent-panels-front/translate";
 import {CommentsDataModel, EditAdvertisementDataModel, QuestionAnswerDataModel} from "@waldent-panels-front/models";
 import {AdvertisementService} from "../service/advertisement.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-ad-details',
@@ -26,7 +27,7 @@ export class AdvertisementDetails implements OnInit {
   commentsCardsSlideData!: CommentsDataModel[];
   advertisementData!: EditAdvertisementDataModel;
 
-  constructor(public i18n: I18nService, private advertisementService: AdvertisementService,) {
+  constructor(public i18n: I18nService, private advertisementService: AdvertisementService, private router: Router) {
   }
 
   ngOnInit() {
@@ -79,6 +80,8 @@ export class AdvertisementDetails implements OnInit {
    * TODO: Navigate To Edit Advertisement Page
    */
   onNavigateToEditAdvertisementPage() {
-    // this.advertisementCode
+    this.router.navigate(['advertisement/edit', {
+      id: this.advertisementData.id
+    }])
   }
 }

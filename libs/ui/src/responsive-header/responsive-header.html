@@ -1,4 +1,4 @@
-<section class="responsive-container flex flex-col items-start self-stretch">
+<section class="responsive-container flex flex-col items-start self-stretch mb-4">
   <header class="header flex justify-between items-center self-stretch">
     <section class="header-details-container flex justify-center items-center">
       <button class="icon-container flex flex-col justify-center items-center">
@@ -15,7 +15,7 @@
           <i class="pi pi-{{action.icon}}"></i>
         </button>
       }
-      <button (click)="baseService.updateSideBarOpenClosedStatus()" class="bars">
+      <button (click)="changeSideBarOpenStatus.emit()" class="bars">
         <i class="pi pi-bars"></i>
       </button>
     </section>
