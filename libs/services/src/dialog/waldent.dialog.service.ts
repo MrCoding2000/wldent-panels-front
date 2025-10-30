@@ -13,7 +13,8 @@ export class WaldentDialogService {
   openDialog(component: Type<any>, header: string) {
     this.#dynamicDialogRef = this.dialogService.open(component, {
       header,
-      width: '400px',
+      width: '100%',
+      contentStyle: { 'height': '100%', overflow: 'auto', backgroundColor: 'transparent'},
       modal: true,
     }) as any;
 

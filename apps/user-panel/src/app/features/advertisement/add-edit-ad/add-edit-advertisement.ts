@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Type} from '@angular/core';
 import {ToggleSwitch} from "@waldent-panels-front/ui";
 import {AdvertisementService} from "../service/advertisement.service";
 import {FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {NgClass} from "@angular/common";
 import {Dialog} from "primeng/dialog";
 import {WaldentDialogService} from "@waldent-panels-front/services";
+import {AddEditAdvertisementFinalCheck} from "./add-edit-advertisement-final-check/add-edit-advertisement-final-check";
 
 @Component({
   selector: 'app-add-ad-details',
@@ -85,8 +86,8 @@ export class AddEditAdvertisement implements OnInit {
   /**
    * Show Image Upload Rules
    */
-  onShowImageUploadRules() {
-
+  onShowImageUploadRules(componentName: Type<any>, header: string) {
+    this.waldentDialogService.openDialog(componentName, header);
   }
 
   onUploadImage(event: Event) {
@@ -160,4 +161,6 @@ export class AddEditAdvertisement implements OnInit {
   onSubmitAddEditAdvertisementForm() {
     console.log(this.addEditAdvertisementFormGroup.value);
   }
+
+  protected readonly AddEditAdvertisementFinalCheck = AddEditAdvertisementFinalCheck;
 }
