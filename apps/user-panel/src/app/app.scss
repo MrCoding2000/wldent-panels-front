@@ -29,6 +29,7 @@
       max-width: calc(902px + 16px + 16px);
       height: 90dvh;
       margin: 0 8px;
+      padding-bottom: 2em;
       overflow-y: auto;
       &.collapsed {
         max-width: calc(1150px + 16px + 16px);
