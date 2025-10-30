@@ -33,7 +33,7 @@ export class AddEditAdvertisement implements OnInit {
 
   ngOnInit() {
     this.createAddEditAdvertisementForm();
-    this.getAdvertisementDataById();
+    if (this.id) this.getAdvertisementDataById();
   }
 
   createAddEditAdvertisementForm(): void {
@@ -168,7 +168,7 @@ export class AddEditAdvertisement implements OnInit {
    * TODO: MODEL AND INTEGRATION
    */
   getAdvertisementDataById() {
-    this.advertisementService.adverstisementDataById(1).subscribe((data: any) => {
+    this.advertisementService.adverstisementDataById(this.id).subscribe((data: any) => {
       this.addEditAdvertisementFormGroup.setValue(data);
     })
   }

@@ -6,6 +6,7 @@ import {OptionalCardsDataModel} from "@waldent-panels-front/models";
 import {DecimalPipe} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {DomSanitizer} from "@angular/platform-browser";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-active-advertisement',
@@ -24,7 +25,7 @@ export class ActiveAdvertisement implements OnInit {
   checked: any;
   notificationsEnabled!: string;
 
-  constructor(public i18n: I18nService, private advertisementService: AdvertisementService, public sanitizer: DomSanitizer) {
+  constructor(public i18n: I18nService, private advertisementService: AdvertisementService, public sanitizer: DomSanitizer, private router: Router) {
   }
 
   ngOnInit() {
@@ -53,7 +54,9 @@ export class ActiveAdvertisement implements OnInit {
    * @param id
    */
   onEditAdvertisement(id: number) {
-
+    this.router.navigate(['advertisement/details', {
+      id: id
+    }]).then()
   }
 
   /**
