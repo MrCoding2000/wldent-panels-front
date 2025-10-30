@@ -1,6 +1,5 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ActionsListModel} from "@waldent-panels-front/models";
-import {BaseService} from "@waldent-panels-front/services";
 
 @Component({
   selector: 'lib-responsive-header',
@@ -15,6 +14,8 @@ export class ResponsiveHeader {
   @Input() title!: string;
   @Input() subTitle!: string;
 
-  constructor(public baseService: BaseService) {
+  @Output() changeSideBarOpenStatus: EventEmitter<void> = new EventEmitter();
+
+  constructor() {
   }
 }

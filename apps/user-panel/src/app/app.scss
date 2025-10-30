@@ -37,3 +37,15 @@
     }
   }
 }
+
+::ng-deep {
+  .p-drawer-header {
+    padding: 1em !important;
+  }
+  .p-drawer-right {
+    width: 320px !important;
+    height: 100vh !important;
+    background: #F7F9FB !important;
+  }
+}
+
