@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "commentImage": "assets/images/user-panel/dashboard/kit.svg",
+    "productName": "کیت ابزار بهداشت دهان و دندان ابزارهای دندانپزشکی",
+    "userImage": "assets/images/user-panel/dashboard/user.svg",
+    "username": "هومن شهرزاد",
+    "label": "پاسخ داده اید",
+    "commentDate": "۱۱ مرداد ۱۴۰۴",
+    "userQuestion": "آیا ابزارهای داخل کیت ضدزنگ هستند؟"
+  },
+  {
+    "id": 2,
+    "commentImage": "assets/images/user-panel/dashboard/kit.svg",
+    "productName": "کیت ابزار بهداشت دهان و دندان ابزارهای دندانپزشکی",
+    "userImage": "assets/images/user-panel/dashboard/user.svg",
+    "username": "هومن شهرزاد",
+    "label": "پاسخ داده اید",
+    "commentDate": "۱۱ مرداد ۱۴۰۴",
+    "userQuestion": "آیا ابزارهای داخل کیت ضدزنگ هستند؟"
+  },
+  {
+    "id": 3,
+    "commentImage": "assets/images/user-panel/dashboard/kit.svg",
+    "productName": "کیت ابزار بهداشت دهان و دندان ابزارهای دندانپزشکی",
+    "userImage": "assets/images/user-panel/dashboard/user.svg",
+    "username": "هومن شهرزاد",
+    "label": "پاسخ داده اید",
+    "commentDate": "۱۱ مرداد ۱۴۰۴",
+    "userQuestion": "آیا ابزارهای داخل کیت ضدزنگ هستند؟"
+  },
+  {
+    "id": 4,
+    "commentImage": "assets/images/user-panel/dashboard/kit.svg",
+    "productName": "کیت ابزار بهداشت دهان و دندان ابزارهای دندانپزشکی",
+    "userImage": "assets/images/user-panel/dashboard/user.svg",
+    "username": "هومن شهرزاد",
+    "label": "پاسخ داده اید",
+    "commentDate": "۱۱ مرداد ۱۴۰۴",
+    "userQuestion": "آیا ابزارهای داخل کیت ضدزنگ هستند؟"
+  },
+  {
+    "id": 5,
+    "commentImage": "assets/images/user-panel/dashboard/kit.svg",
+    "productName": "کیت ابزار بهداشت دهان و دندان ابزارهای دندانپزشکی",
+    "userImage": "assets/images/user-panel/dashboard/user.svg",
+    "username": "هومن شهرزاد",
+    "label": "پاسخ داده اید",
+    "commentDate": "۱۱ مرداد ۱۴۰۴",
+    "userQuestion": "آیا ابزارهای داخل کیت ضدزنگ هستند؟"
+  }
+]

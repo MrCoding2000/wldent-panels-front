@@ -1,0 +1,18 @@
+<section class="dashboard-container">
+  <!--Day Overview-->
+  <lib-card [sectionTitle]="i18n.translate('dashboard.day-overview')"
+            [cardsList]="advertisementStatusList"></lib-card>
+  <!--Received Ticket-->
+  <lib-ticket-cards
+    [ticketCardsSlideData]="ticketCardsSlideData"
+  [actionButtonTitle]="i18n.translate('dashboard.answer-to-ticket')">
+
+  </lib-ticket-cards>
+  <!--Questions-->
+  <lib-question-answer
+    [questionAnswerCardsSlideData]="questionsAnswerCardsSlideData"
+    [actionButtonTitle]="i18n.translate('question-answer-card.save-question-button')">
+  </lib-question-answer>
+  <!--Comments Cards-->
+  <lib-comments-cards [commentsCardsSlideData]="commentsCardsSlideData"></lib-comments-cards>
+</section>

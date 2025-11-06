@@ -10,3 +10,4 @@ export * from './filter-bar/filter-bar';
 export * from './toggle-switch/toggle-switch';
 export * from './product-details/product-details';
 export * from './base-layout/base-layout';
+export * from './ticket-cards/ticket-cards';

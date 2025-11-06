@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "assets/images/user-panel/dashboard/mark.svg",
+    "title": "درخواست های جدید",
+    "amount": 55
+  },
+  {
+    "icon": "assets/images/user-panel/dashboard/mark.svg",
+    "title": "تیکت های درحال انتظار",
+    "amount": 27
+  },
+  {
+    "icon": "assets/images/user-panel/dashboard/mark.svg",
+    "title": "دیدگاه های درحال انتظار",
+    "amount": 8
+  },
+  {
+    "icon": "assets/images/user-panel/dashboard/mark.svg",
+    "title": "گزارش ها",
+    "amount": 12
+  }
+]
