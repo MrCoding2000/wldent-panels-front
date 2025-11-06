@@ -1,1 +1,8 @@
-<router-outlet></router-outlet>
+<lib-base-layout
+  [headerActionsList]="headerActionsList"
+  [headerBigButtonActionsList]="headerBigButtonActionsList"
+  [responsiveHeaderActionsList]="responsiveHeaderActionsList"
+  [sidebarMenu]="sidebarMenu"
+  [isSidebarOpen]="isSidebarOpen">
+  <router-outlet></router-outlet>
+</lib-base-layout>

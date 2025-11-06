@@ -1,16 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {I18nService} from "@waldent-panels-front/translate";
-import {Header, ResponsiveHeader, Sidebar} from "@waldent-panels-front/ui";
+import {BaseLayout, Header, ResponsiveHeader, Sidebar} from "@waldent-panels-front/ui";
 import {BaseService} from "@waldent-panels-front/services";
 import {UserBaseService} from "./core/service/base.service";
-import {ActionsListModel, BigButtonActionsListModel} from "@waldent-panels-front/models";
+import {ActionsListModel, BigButtonActionsListModel, SidebarModel} from "@waldent-panels-front/models";
 import {NgStyle} from "@angular/common";
-import {SidebarModel} from "@waldent-panels-front/models";
 import {Drawer} from "primeng/drawer";
 
 @Component({
-  imports: [RouterModule, Header, ResponsiveHeader, NgStyle, Sidebar, Drawer],
+  imports: [RouterModule, Header, ResponsiveHeader, NgStyle, Sidebar, Drawer, BaseLayout],
   standalone: true,
   selector: 'app-root',
   templateUrl: './app.html',
@@ -31,7 +30,7 @@ export class App implements OnInit {
     {icon: 'headphones', command: () => this.supportHandler()},
   ];
   sidebarMenu!: SidebarModel[];
-  isSidebarOpen = true;
+  isSidebarOpen = false;
 
   constructor(public i18n: I18nService, public baseService: BaseService, private userBaseService: UserBaseService) {
     this.i18n.setLanguage('fa', 'user-panel');

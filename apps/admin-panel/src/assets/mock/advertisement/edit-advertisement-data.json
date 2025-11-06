@@ -1,0 +1,49 @@
+{
+  "id": 1,
+  "isExist": true,
+  "cost": 2000000000,
+  "existenceNumber": 120,
+  "images": [
+    {
+      "id": 1,
+      "src": "assets/images/user-panel/dashboard/kit.svg"
+    },
+    {
+      "id": 1,
+      "src": "assets/images/user-panel/dashboard/kit.svg"
+    },
+    {
+      "id": 1,
+      "src": "assets/images/user-panel/dashboard/kit.svg"
+    },
+    {
+      "id": 1,
+      "src": "assets/images/user-panel/dashboard/kit.svg"
+    },
+    {
+      "id": 1,
+      "src": "assets/images/user-panel/dashboard/kit.svg"
+    },
+    {
+      "id": 1,
+      "src": "assets/images/user-panel/dashboard/kit.svg"
+    },
+    {
+      "id": 1,
+      "src": "assets/images/user-panel/dashboard/kit.svg"
+    },
+    {
+      "id": 1,
+      "src": "assets/images/user-panel/dashboard/kit.svg"
+    }
+  ],
+  "name": "کیت ابزار بهداشت دهان و دندان ابزارهای دندانپزشکی",
+  "code": "W-D-500380",
+  "date": "1404/06/02",
+  "questionNumbers": 60,
+  "commentNumbers": 2,
+  "rate": 5.5,
+  "sellNumbers": 24,
+  "isStock": false,
+  "videoNumbers": 0
+}
