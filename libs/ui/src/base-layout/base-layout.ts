@@ -20,7 +20,7 @@ import {NgStyle} from "@angular/common";
 })
 export class BaseLayout {
   @Input() headerActionsList!: ActionsListModel[];
-  @Input() headerBigButtonActionsList!: BigButtonActionsListModel[];
+  @Input() headerBigButtonActionsList: BigButtonActionsListModel[] = [];
   @Input() responsiveHeaderActionsList!: ActionsListModel[];
   @Input() sidebarMenu!: SidebarModel[];
   @Input() isSidebarOpen = false;

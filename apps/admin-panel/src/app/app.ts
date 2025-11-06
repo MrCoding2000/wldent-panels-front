@@ -19,9 +19,6 @@ export class App implements OnInit {
     {icon: 'moon', command: () => this.changeTheme()},
     {icon: 'language', command: () => this.changeLanguage()}
   ];
-  headerBigButtonActionsList: BigButtonActionsListModel[] = [
-    {title: 'ایجاد آگهی جدید', icon: 'add', background: '#009975', command: () => this.onAddAdvertisement()}
-  ];
 
   responsiveHeaderActionsList: ActionsListModel[] = [
     {icon: 'bell', command: () => this.notificationsHandler()},

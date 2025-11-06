@@ -15,7 +15,7 @@ import {ActionsListModel, BigButtonActionsListModel} from "@waldent-panels-front
 export class Header {
   @Input() pageTitle!: string;
   @Input() actionsList!: ActionsListModel[];
-  @Input() bigButtonActionsList!: BigButtonActionsListModel[];
+  @Input() bigButtonActionsList: BigButtonActionsListModel[] = [];
   @Input() icon!: string;
   @Input() title!: string;
   @Input() subTitle!: string;
