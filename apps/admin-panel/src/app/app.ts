@@ -31,7 +31,7 @@ export class App implements OnInit {
   isSidebarOpen = false;
 
   constructor(public i18n: I18nService, public baseService: BaseService, private adminBaseService: AdminBaseService) {
-    this.i18n.setLanguage('fa', 'user-panel');
+    this.i18n.setLanguage('fa', 'admin-panel');
   }
 
   ngOnInit() {

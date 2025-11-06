@@ -46,7 +46,6 @@ export class I18nService {
   private loadTranslations(lang: Language, app: 'user-panel' | 'admin-panel') {
     const sharedPath: string = `assets/i18n/shared/${lang}.json`;
     const appPath: string = `assets/i18n/${app}/${lang}.json`;
-
     forkJoin({
       shared: this.http.get<Record<string, string>>(sharedPath).pipe(
         catchError((err) => {

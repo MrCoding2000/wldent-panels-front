@@ -1,22 +1,22 @@
 [
   {
     "icon": "assets/images/user-panel/dashboard/mark.svg",
-    "title": "آگهی های فعال",
-    "amount": 500406
+    "title": "درخواست های جدید",
+    "amount": 55
   },
   {
     "icon": "assets/images/user-panel/dashboard/mark.svg",
-    "title": "آگهی های با موجودی صفر",
-    "amount": 480
-  },
-  {
-    "icon": "assets/images/user-panel/dashboard/mark.svg",
-    "title": "آگهی های در انتظار تایید",
+    "title": "تیکت های درحال انتظار",
     "amount": 27
   },
   {
     "icon": "assets/images/user-panel/dashboard/mark.svg",
-    "title": "آگهی های رد شده",
+    "title": "دیدگاه های درحال انتظار",
     "amount": 8
+  },
+  {
+    "icon": "assets/images/user-panel/dashboard/mark.svg",
+    "title": "گزارش ها",
+    "amount": 12
   }
 ]

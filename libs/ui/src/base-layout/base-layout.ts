@@ -1,6 +1,5 @@
 import {Component, Input} from '@angular/core';
 import {ActionsListModel, BigButtonActionsListModel, SidebarModel} from "@waldent-panels-front/models";
-import {I18nService} from "@waldent-panels-front/translate";
 import {BaseService} from "@waldent-panels-front/services";
 import {Header, ResponsiveHeader, Sidebar} from "@waldent-panels-front/ui";
 import {Drawer} from "primeng/drawer";
@@ -26,15 +25,13 @@ export class BaseLayout {
   @Input() sidebarMenu!: SidebarModel[];
   @Input() isSidebarOpen = false;
 
-  constructor(public i18n: I18nService, public baseService: BaseService) {
-    this.i18n.setLanguage('fa', 'user-panel');
+  constructor(public baseService: BaseService) {
   }
 
   /**
    * Change SideBar Open Status
    */
   onChangeSideBarOpenStatus() {
-    console.log(this.isSidebarOpen);
     this.isSidebarOpen = !this.isSidebarOpen;
   }
 }

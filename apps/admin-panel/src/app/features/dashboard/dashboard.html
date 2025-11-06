@@ -1,0 +1,12 @@
+<section class="dashboard-container">
+  <!--RejectAdvertisement Status-->
+  <lib-card [sectionTitle]="i18n.translate('dashboard.day-overview')"
+            [cardsList]="advertisementStatusList"></lib-card>
+  <!--Questions-->
+  <lib-question-answer
+    [questionAnswerCardsSlideData]="questionsAnswerCardsSlideData"
+    [actionButtonTitle]="i18n.translate('question-answer-card.save-question-button')">
+  </lib-question-answer>
+  <!--Comments Cards-->
+  <lib-comments-cards [commentsCardsSlideData]="commentsCardsSlideData"></lib-comments-cards>
+</section>
