@@ -1,8 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {AdvertisementCardModel, CommentsDataModel, QuestionAnswerDataModel} from "@waldent-panels-front/models";
+import {
+  AdvertisementCardModel,
+  CommentsDataModel,
+  QuestionAnswerDataModel,
+  TicketCardDataModel
+} from "@waldent-panels-front/models";
 import {I18nService} from "@waldent-panels-front/translate";
 import {Card, CommentsCards, QuestionAnswer} from "@waldent-panels-front/ui";
 import {DashboardService} from "./service/dashboard";
+import {TicketCards} from "@waldent-panels-front/ui";
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +16,8 @@ import {DashboardService} from "./service/dashboard";
   imports: [
     Card,
     CommentsCards,
-    QuestionAnswer
+    QuestionAnswer,
+    TicketCards
   ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss'
@@ -20,6 +27,7 @@ export class Dashboard implements OnInit {
   receivedOrdersStatusList!: AdvertisementCardModel[];
   commentsCardsSlideData!: CommentsDataModel[];
   questionsAnswerCardsSlideData!: QuestionAnswerDataModel[];
+  ticketCardsSlideData!: TicketCardDataModel[];
 
 
   constructor(public i18n: I18nService, private dashboardService: DashboardService) {
@@ -30,6 +38,7 @@ export class Dashboard implements OnInit {
     this.getReceivedOrdersCardsData();
     this.getCommentsCardsSlideData();
     this.getQuestionAnswerCardsSlideData();
+    this.getTicketCardsSlideData();
   }
 
   getAdvertisementCardsData() {
@@ -53,6 +62,12 @@ export class Dashboard implements OnInit {
   getQuestionAnswerCardsSlideData() {
     this.dashboardService.questionAnswerCardsSlideData().subscribe((data: QuestionAnswerDataModel[]) => {
       this.questionsAnswerCardsSlideData = data;
+    })
+  }
+
+  getTicketCardsSlideData() {
+    this.dashboardService.ticketCardsSlideData().subscribe((data: TicketCardDataModel[]) => {
+      this.ticketCardsSlideData = data;
     })
   }
 

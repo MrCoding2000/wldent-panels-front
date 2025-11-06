@@ -1,7 +1,13 @@
 <section class="dashboard-container">
-  <!--RejectAdvertisement Status-->
+  <!--Day Overview-->
   <lib-card [sectionTitle]="i18n.translate('dashboard.day-overview')"
             [cardsList]="advertisementStatusList"></lib-card>
+  <!--Received Ticket-->
+  <lib-ticket-cards
+    [ticketCardsSlideData]="ticketCardsSlideData"
+  [actionButtonTitle]="i18n.translate('dashboard.answer-to-ticket')">
+
+  </lib-ticket-cards>
   <!--Questions-->
   <lib-question-answer
     [questionAnswerCardsSlideData]="questionsAnswerCardsSlideData"

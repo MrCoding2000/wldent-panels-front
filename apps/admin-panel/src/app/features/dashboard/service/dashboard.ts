@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
 import {ApiService} from "@waldent-panels-front/services";
 import {Observable} from "rxjs";
-import {AdvertisementCardModel, CommentsDataModel, QuestionAnswerDataModel} from "@waldent-panels-front/models";
+import {
+  AdvertisementCardModel,
+  CommentsDataModel,
+  QuestionAnswerDataModel,
+  TicketCardDataModel
+} from "@waldent-panels-front/models";
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +29,9 @@ export class DashboardService {
 
   questionAnswerCardsSlideData(): Observable<QuestionAnswerDataModel[]> {
     return this.apiService.get<QuestionAnswerDataModel[]>('assets/mock/dashboard/question-answer.json');
+  }
+
+  ticketCardsSlideData(): Observable<TicketCardDataModel[]> {
+    return this.apiService.get<TicketCardDataModel[]>('assets/mock/dashboard/ticket-data.json');
   }
 }
