@@ -3,7 +3,7 @@ import {Rating} from "primeng/rating";
 import {FormsModule} from "@angular/forms";
 import {I18nService} from "@waldent-panels-front/translate";
 import {NgClass, NgStyle, NgTemplateOutlet} from "@angular/common";
-import {OptionalCardsDataModel} from "@waldent-panels-front/models";
+import {NewAdvertisementRequest, OptionalCardsDataModel} from "@waldent-panels-front/models";
 
 @Component({
   selector: 'lib-optional-card',
@@ -20,7 +20,7 @@ import {OptionalCardsDataModel} from "@waldent-panels-front/models";
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class OptionalCard {
-  @Input() optionalCardsSlideData!: OptionalCardsDataModel[];
+  @Input() optionalCardsSlideData!: OptionalCardsDataModel<any | NewAdvertisementRequest>[];
   @Input() optionalCardTemplate!: TemplateRef<any>;
   @Input() headerTitle!: string;
   @Input() actionButtonTitle!: string;
