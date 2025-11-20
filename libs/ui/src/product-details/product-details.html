@@ -22,7 +22,7 @@
       <div class="product-main-info w-full flex items-center justify-between my-1">
         <span class="flex items-center">
           <span [innerHTML]="sanitizer.bypassSecurityTrustHtml(productMainInfo.iconSrc)"></span>
-          <small class="title mx-1">{{ productMainInfo.key }}</small>
+          <small class="title mx-1">{{ i18n.translate('product-details.' + productMainInfo.key) }}</small>
         </span>
         <span class="flex">
             <small class="mx-1 value">{{ productData[productMainInfo.key] }}</small>
@@ -64,7 +64,7 @@
       <div class="product-complete-info w-full flex items-center justify-between my-1">
         <span class="flex items-center">
           <span [innerHTML]="sanitizer.bypassSecurityTrustHtml(productCompleteInfo.iconSrc)"></span>
-          <small class="title mx-1">{{ productCompleteInfo.key }}</small>
+          <small class="title mx-1">{{ i18n.translate('product-details.' + productCompleteInfo.key) }}</small>
         </span>
         <span class="flex">
             <small class="mx-1 value">{{ productData[productCompleteInfo.key] }}</small>

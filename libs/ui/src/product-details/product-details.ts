@@ -3,6 +3,7 @@ import {ToggleSwitch} from "../toggle-switch/toggle-switch";
 import {DecimalPipe} from "@angular/common";
 import {EditAdvertisementDataModel} from "@waldent-panels-front/models";
 import {DomSanitizer} from "@angular/platform-browser";
+import {I18nService} from "@waldent-panels-front/translate";
 
 @Component({
   selector: 'lib-product-details',
@@ -30,7 +31,7 @@ export class ProductDetails {
     {icon: 'edit', title: 'افزودن تخفیف'},
   ];
 
-  constructor(public sanitizer: DomSanitizer) {
+  constructor(public sanitizer: DomSanitizer, public i18n: I18nService) {
   }
 
   /**

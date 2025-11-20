@@ -46,5 +46,19 @@
     "oldest": "قدیمی ترین",
     "bestSeller": "بیشترین فروش",
     "lowestSales": "کمترین فروش"
+  },
+  "product-details": {
+    "cost": "قیمت",
+    "code": "کد آگهی",
+    "date": "تاریخ ثبت آگهی",
+    "existenceNumber": "موجودی",
+    "sellNumbers": "تعداد فروش",
+    "rate": "امتیاز",
+    "commentNumbers": "تعداد کامنت ها",
+    "questionNumbers": "تعداد سوالات",
+    "discount": "تخفیف",
+    "imagesNumber": "تعداد تصاویر",
+    "videoNumbers": "تعداد ویدئو",
+    "isStock": "محصول کارکرده"
   }
 }
