@@ -12,5 +12,7 @@ export interface EditAdvertisementDataModel {
   rate: number,
   sellNumbers: number,
   isStock: boolean,
-  videoNumbers: number
+  videoNumbers: number,
+  imagesNumber: number,
+  discount: number,
 }

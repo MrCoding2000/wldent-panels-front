@@ -3,10 +3,7 @@
   <lib-product-details
     [productMainInfoList]="adMainInfoList"
     [productCompleteInfoList]="adCompleteInfoList"
-    [cost]="advertisementData.cost"
-    [productImages]="advertisementData.images"
-    [productName]="advertisementData.name"
-    [isProductExist]="advertisementData.isExist"
+    [productData]="advertisementData"
     (deleteImageId)="onDeleteProductImage($event)"
     (productExistenceCheck)="onChangeAdExistenceStatus($event)"
     (editProduct)="onNavigateToEditAdvertisementPage()">

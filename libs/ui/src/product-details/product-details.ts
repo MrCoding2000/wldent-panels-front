@@ -1,6 +1,8 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ToggleSwitch} from "../toggle-switch/toggle-switch";
 import {DecimalPipe} from "@angular/common";
+import {EditAdvertisementDataModel} from "@waldent-panels-front/models";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'lib-product-details',
@@ -14,12 +16,9 @@ import {DecimalPipe} from "@angular/common";
 })
 export class ProductDetails {
   // TODO: MODEL CHECK
-  @Input() productMainInfoList!: { icon: string, value: number | string }[] | string[];
-  @Input() productCompleteInfoList!: { icon: string, value: number | string }[] | string[];
-  @Input() cost!: number;
-  @Input() productImages!: {id: number, src: string} [];
-  @Input() productName!: string;
-  @Input() isProductExist!: boolean;
+  @Input() productMainInfoList!: { key: string, iconSrc: string, unitIconSrc?: string }[];
+  @Input() productCompleteInfoList!: { key: string, iconSrc: string, unitIconSrc?: string }[];
+  @Input() productData!: EditAdvertisementDataModel;
 
   @Output() deleteImageId: EventEmitter<number> = new EventEmitter();
   @Output() productExistenceCheck: EventEmitter<boolean> = new EventEmitter();
@@ -30,6 +29,9 @@ export class ProductDetails {
     // { icon: 'edit', title: 'ارشیو کردن آگهی' },
     {icon: 'edit', title: 'افزودن تخفیف'},
   ];
+
+  constructor(public sanitizer: DomSanitizer) {
+  }
 
   /**
    * TODO: Add Dialog
