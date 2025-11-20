@@ -33,5 +33,7 @@
   "rate": 5.5,
   "sellNumbers": 24,
   "isStock": false,
-  "videoNumbers": 0
+  "videoNumbers": 0,
+  "imagesNumber": 5,
+  "discount": 0
 }
