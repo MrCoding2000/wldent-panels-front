@@ -30,6 +30,7 @@ export class OptionalCard {
   @Input() isSliderCard: boolean = false;
 
   @Output() actionClick: EventEmitter<number> = new EventEmitter();
+  @Output() onRightActionButtonClick: EventEmitter<number> = new EventEmitter();
   constructor(public i18n: I18nService) {
     this.rightActionButtonTitle = i18n.translate('optional-card.edit-ad');
   }
