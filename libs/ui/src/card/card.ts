@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {AdvertisementCardModel} from "@waldent-panels-front/models";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'lib-card',
@@ -12,7 +13,10 @@ export class Card {
   @Input() cardsList!: AdvertisementCardModel[];
   @Input() sectionTitle!: string;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
+  onNavigateToRouterLink(routerLink: string) {
+    this.router.navigate([routerLink]).then();
+  }
 }

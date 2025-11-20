@@ -2,7 +2,8 @@
   {
     "icon": "assets/images/user-panel/dashboard/mark.svg",
     "title": "آگهی های فعال",
-    "amount": 500406
+    "amount": 500406,
+    "routerLink": "/advertisement/active"
   },
   {
     "icon": "assets/images/user-panel/dashboard/mark.svg",
@@ -17,6 +18,7 @@
   {
     "icon": "assets/images/user-panel/dashboard/mark.svg",
     "title": "آگهی های رد شده",
-    "amount": 8
+    "amount": 8,
+    "routerLink": "/advertisement/reject"
   }
 ]

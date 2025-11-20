@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {I18nService} from "@waldent-panels-front/translate";
 import {BaseLayout} from "@waldent-panels-front/ui";
-import {ActionsListModel, BigButtonActionsListModel, SidebarModel} from "@waldent-panels-front/models";
+import {ActionsListModel, SidebarModel} from "@waldent-panels-front/models";
 import {BaseService} from "@waldent-panels-front/services";
 import {AdminBaseService} from "./core/services/admin.base.service";
 
