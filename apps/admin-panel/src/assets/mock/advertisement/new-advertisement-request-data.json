@@ -6,6 +6,7 @@
     "adDate": "1404/06/02",
     "storeName": "دنتارویال",
     "isReviewed": true,
+    "adImage": "assets/images/user-panel/dashboard/kit.svg",
     "detailsList": {
       "inventory": 24,
       "imagesNumber": 6,
@@ -111,6 +112,7 @@
       "discount": 0,
       "videosNumber": 0,
       "isStock": false,
+      "adImage": "assets/images/user-panel/dashboard/kit.svg",
       "productImages": [
         {
           "id": 1,
@@ -210,6 +212,7 @@
       "discount": 0,
       "videosNumber": 0,
       "isStock": false,
+      "adImage": "assets/images/user-panel/dashboard/kit.svg",
       "productImages": [
         {
           "id": 1,
@@ -309,6 +312,7 @@
       "discount": 0,
       "videosNumber": 0,
       "isStock": false,
+      "adImage": "assets/images/user-panel/dashboard/kit.svg",
       "productImages": [
         {
           "id": 1,
@@ -408,6 +412,7 @@
       "discount": 0,
       "videosNumber": 0,
       "isStock": false,
+      "adImage": "assets/images/user-panel/dashboard/kit.svg",
       "productImages": [
         {
           "id": 1,
@@ -507,6 +512,7 @@
       "discount": 0,
       "videosNumber": 0,
       "isStock": false,
+      "adImage": "assets/images/user-panel/dashboard/kit.svg",
       "productImages": [
         {
           "id": 1,
@@ -606,6 +612,7 @@
       "discount": 0,
       "videosNumber": 0,
       "isStock": false,
+      "adImage": "assets/images/user-panel/dashboard/kit.svg",
       "productImages": [
         {
           "id": 1,
@@ -705,6 +712,7 @@
       "discount": 0,
       "videosNumber": 0,
       "isStock": false,
+      "adImage": "assets/images/user-panel/dashboard/kit.svg",
       "productImages": [
         {
           "id": 1,
@@ -804,6 +812,7 @@
       "discount": 0,
       "videosNumber": 0,
       "isStock": false,
+      "adImage": "assets/images/user-panel/dashboard/kit.svg",
       "productImages": [
         {
           "id": 1,
@@ -903,6 +912,7 @@
       "discount": 0,
       "videosNumber": 0,
       "isStock": false,
+      "adImage": "assets/images/user-panel/dashboard/kit.svg",
       "productImages": [
         {
           "id": 1,

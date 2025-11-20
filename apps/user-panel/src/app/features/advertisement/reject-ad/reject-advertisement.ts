@@ -17,7 +17,7 @@ import {AdvertisementService} from "../service/advertisement.service";
 })
 export class RejectAdvertisement implements OnInit {
   advertisementStatusList!: AdvertisementCardModel[];
-  rejectAdvertisementData!: OptionalCardsDataModel[];
+  rejectAdvertisementData!: OptionalCardsDataModel<any>[];
 
   constructor(public i18n: I18nService, private dashboardService: DashboardService, private advertisementService: AdvertisementService) {
   }
@@ -40,7 +40,7 @@ export class RejectAdvertisement implements OnInit {
    * TODO: AdvertisementRejectCardsData
    */
   getAdvertisementRejectCardsData() {
-    this.advertisementService.advertisementRejectCardsData().subscribe((data: OptionalCardsDataModel[]) => {
+    this.advertisementService.advertisementRejectCardsData().subscribe((data: OptionalCardsDataModel<any>[]) => {
       this.rejectAdvertisementData = data;
     })
   }

@@ -16,12 +16,12 @@ export class AdvertisementService {
   constructor(private apiService: ApiService) {
   }
 
-  advertisementRejectCardsData(): Observable<OptionalCardsDataModel[]> {
-    return this.apiService.get<OptionalCardsDataModel[]>('assets/mock/advertisement/reject-advertisement-data.json')
+  advertisementRejectCardsData(): Observable<OptionalCardsDataModel<any>[]> {
+    return this.apiService.get<OptionalCardsDataModel<any>[]>('assets/mock/advertisement/reject-advertisement-data.json')
   }
 
-  advertisementActiveCardsData(): Observable<OptionalCardsDataModel[]> {
-    return this.apiService.get<OptionalCardsDataModel[]>('assets/mock/advertisement/active-advertisement-data.json')
+  advertisementActiveCardsData(): Observable<OptionalCardsDataModel<any>[]> {
+    return this.apiService.get<OptionalCardsDataModel<any>[]>('assets/mock/advertisement/active-advertisement-data.json')
   }
 
   questionAnswerCardsSlideData(): Observable<QuestionAnswerDataModel[]> {
