@@ -18,10 +18,12 @@
     @for (slide of questionAnswerCardsSlideData; track slide) {
       <swiper-slide>
         <section class="question-answer-card-container flex flex-col items-end">
-          <header class="header-container flex items-center justify-end self-stretch">
-            <img src="assets/images/user-panel/dashboard/kit.svg" alt="">
-            <h3 class="title mx-2">{{ slide.productName }}</h3>
-          </header>
+          @if(hasHeader) {
+            <header class="header-container flex items-center justify-end self-stretch">
+              <img src="{{slide.commentImage}}" alt="">
+              <h3 class="title mx-2">{{ slide.productName }}</h3>
+            </header>
+          }
           <!--User Info-->
           <section class="user-info-container flex justify-between items-center self-stretch mt-3">
             <div class="flex items-center gap-3">

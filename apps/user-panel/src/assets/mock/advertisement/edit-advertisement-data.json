@@ -23,18 +23,6 @@
     {
       "id": 1,
       "src": "assets/images/user-panel/dashboard/kit.svg"
-    },
-    {
-      "id": 1,
-      "src": "assets/images/user-panel/dashboard/kit.svg"
-    },
-    {
-      "id": 1,
-      "src": "assets/images/user-panel/dashboard/kit.svg"
-    },
-    {
-      "id": 1,
-      "src": "assets/images/user-panel/dashboard/kit.svg"
     }
   ],
   "name": "کیت ابزار بهداشت دهان و دندان ابزارهای دندانپزشکی",
@@ -45,5 +33,7 @@
   "rate": 5.5,
   "sellNumbers": 24,
   "isStock": false,
-  "videoNumbers": 0
+  "videoNumbers": 0,
+  "imagesNumber": 5,
+  "discount": 0
 }

@@ -1,0 +1,61 @@
+<section class="new-advertisement-request">
+  <lib-filter-bar></lib-filter-bar>
+  <lib-optional-card
+    [optionalCardsSlideData]="advertisementNewRequestCardsData"
+    [optionalCardTemplate]="optionalCardTemplate"
+    [headerTitle]="i18n.translate('advertisement.active-ad')"
+    [actionButtonTitle]="i18n.translate('optional-card.create-discount')"
+    (actionClick)="onRejectRequest($event)">
+  </lib-optional-card>
+</section>
+
+<ng-template #optionalCardTemplate let-slide>
+  <section class="new-optional-advertisement-template-container">
+    <div class="product-images-container flex flex-wrap gap-2 my-3">
+      @for (newAdvertisementItem of slide.detailsList.productImages; track newAdvertisementItem.id; let index = $index) {
+        <div class="product-image-container ">
+          <img src="{{newAdvertisementItem.src}}" alt=""/>
+          <small class="block text-center mt-2">{{ index + 1 }}</small>
+        </div>
+      }
+    </div>
+    <hr class="line">
+    <b class="cost">{{ slide.detailsList.cost | number }}</b>
+    <hr class="line">
+    <div class="details-container flex mt-2 gap-2">
+      <!--TODO: Create For Loop-->
+      <span>
+        <img src="assets/image/advertisement/box.png"/>
+        {{slide.detailsList.inventory}}
+      </span>
+      <span>
+        <img src="assets/image/advertisement/photo.png"/>
+        {{slide.detailsList.imagesNumber}}
+      </span>
+      <span>
+        <img src="assets/image/advertisement/percent.png"/>
+        {{slide.detailsList.discount}}
+      </span>
+      <span>
+        <img src="assets/image/advertisement/video.png"/>
+        {{slide.detailsList.videosNumber}}
+      </span>
+      <!--TODO: slide.detailsList.isStock ? 'بله':'خیر'-->
+      <span>
+        <img src="assets/image/advertisement/cycle.png"/>
+        {{slide.detailsList.isStock ? 'بله':'خیر'}}
+      </span>
+    </div>
+    <div class="description">
+      <p>
+        {{ slide.detailsList.description }}
+      </p>
+    </div>
+    <div class="tags-container flex items-center">
+      <img class="sticky right-0 bg-white ml-2" src="assets/image/advertisement/tag-label.png"/>
+      @for (tag of slide.detailsList.tags; track tag.id) {
+        <span class="tag">{{ tag.name }}</span>
+      }
+    </div>
+  </section>
+</ng-template>

@@ -14,6 +14,7 @@ export class QuestionAnswer {
   @Input() headerTitle!: string;
   @Input() questionAnswerCardsSlideData!: QuestionAnswerDataModel[];
   @Input() actionButtonTitle!: string;
+  @Input() hasHeader = true;
 
   @Output() saveQuestion: EventEmitter<number> = new EventEmitter();
 

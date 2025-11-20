@@ -1,10 +1,10 @@
-export interface OptionalCardsDataModel {
+export interface OptionalCardsDataModel<T> {
   id: number,
-  rejectAdImage: string,
+  adImage: string,
   productName: string,
   adCode: string,
   adDate: string,
-  adRejectDate: string,
-  adRejectReason: string,
-  detailsList: any[]
+  adRejectDate?: string,
+  adRejectReason?: string,
+  detailsList: T
 }

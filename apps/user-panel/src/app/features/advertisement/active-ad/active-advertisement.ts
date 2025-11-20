@@ -21,7 +21,7 @@ import {Router} from "@angular/router";
   styleUrl: './active-advertisement.scss'
 })
 export class ActiveAdvertisement implements OnInit {
-  activeAdvertisementData!: OptionalCardsDataModel[];
+  activeAdvertisementData!: OptionalCardsDataModel<any>[];
   checked: any;
   notificationsEnabled!: string;
 
@@ -36,7 +36,7 @@ export class ActiveAdvertisement implements OnInit {
    * TODO: AdvertisementRejectCardsData
    */
   getAdvertisementActiveCardsData() {
-    this.advertisementService.advertisementActiveCardsData().subscribe((data: OptionalCardsDataModel[]) => {
+    this.advertisementService.advertisementActiveCardsData().subscribe((data: OptionalCardsDataModel<any>[]) => {
       this.activeAdvertisementData = data;
     })
   }
