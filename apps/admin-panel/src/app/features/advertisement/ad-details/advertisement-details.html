@@ -1,0 +1,43 @@
+<section class="edit-ad-container">
+  <!--Advertisement Information-->
+  <lib-product-details
+    [productMainInfoList]="adMainInfoList"
+    [productCompleteInfoList]="adCompleteInfoList"
+    [productData]="advertisementData"
+    (deleteImageId)="onDeleteProductImage($event)"
+    (productExistenceCheck)="onChangeAdExistenceStatus($event)"
+    (editProduct)="onNavigateToEditAdvertisementPage()">
+  </lib-product-details>
+  <!--Reports-->
+  <lib-optional-card
+    [hasHeader]="false"
+    [optionalCardsSlideData]="advertisementDetailsReportsCardsData"
+    [optionalCardTemplate]="optionalCardTemplate"
+    [headerTitle]="i18n.translate('advertisement.reports-ad')"
+    [rightActionButtonTitle]="i18n.translate('optional-card.cancel-advertisement')"
+    [rightButtonClass]="'cancel-button'"
+    [actionButtonTitle]="i18n.translate('optional-card.report-mistake')"
+    (actionClick)="onRejectRequest($event)">
+  </lib-optional-card>
+  <!--Questions-->
+  <lib-question-answer
+    [hasHeader]="false"
+    [questionAnswerCardsSlideData]="questionsAnswerCardsSlideData"
+    [actionButtonTitle]="i18n.translate('question-answer-card.save-question-button')">
+  </lib-question-answer>
+  <!--Comments-->
+  <lib-comments-cards
+    [commentsCardsSlideData]="commentsCardsSlideData"
+    [title]="i18n.translate('question-answer-card.save-question-button')">
+  </lib-comments-cards>
+</section>
+
+
+<ng-template #optionalCardTemplate let-slide>
+  <section class="report-container">
+    <header>
+      <h4 class="title">{{ slide.reportReason }}</h4>
+    </header>
+    <p class="text my-3">{{ slide.reportContent }}</p>
+  </section>
+</ng-template>

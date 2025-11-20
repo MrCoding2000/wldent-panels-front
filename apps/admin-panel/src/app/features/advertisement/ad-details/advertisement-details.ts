@@ -8,7 +8,7 @@ import {
   OptionalCardsDataModel,
   QuestionAnswerDataModel
 } from "@waldent-panels-front/models";
-import {AdvertisementService} from "../service/advertisement.service";
+import {AdvertisementService} from "../service/advertisement-service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -70,6 +70,7 @@ export class AdvertisementDetails implements OnInit {
   questionsAnswerCardsSlideData!: QuestionAnswerDataModel[];
   commentsCardsSlideData!: CommentsDataModel[];
   advertisementData!: EditAdvertisementDataModel;
+  advertisementDetailsReportsCardsData!: OptionalCardsDataModel<any>[];
 
   constructor(public i18n: I18nService, private advertisementService: AdvertisementService, private router: Router) {
   }
@@ -78,6 +79,7 @@ export class AdvertisementDetails implements OnInit {
     this.getAdvertisementData();
     this.getQuestionAnswerCardsSlideData();
     this.getCommentsCardsSlideData();
+    this.getAdvertisementDetailsReportsCardsData();
   }
 
   getAdvertisementData() {
@@ -127,5 +129,16 @@ export class AdvertisementDetails implements OnInit {
     this.router.navigate(['advertisement/edit', {
       id: this.advertisementData.id
     }]).then()
+  }
+
+  getAdvertisementDetailsReportsCardsData() {
+    this.advertisementService.advertisementDetailsReportsCardsData().subscribe((data: OptionalCardsDataModel<any>[]) => {
+      this.advertisementDetailsReportsCardsData = data;
+    })
+  }
+
+
+  onRejectRequest($event: number) {
+
   }
 }

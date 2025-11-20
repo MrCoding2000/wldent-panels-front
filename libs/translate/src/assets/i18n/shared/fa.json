@@ -26,13 +26,16 @@
     "ad-registration-date": "تاریخ ثبت آگهی",
     "edit-ad": "ویرایش آگهی",
     "review-request": "درخواست بازبینی",
-    "create-discount": "ایجاد تخفیف"
+    "create-discount": "ایجاد تخفیف",
+    "report-mistake": "گزارش اشتباه",
+    "cancel-advertisement": "تعلیق آگهی"
   },
   "advertisement": {
     "reject-ad": "آگهی های رد شده",
     "active-ad": "آگهی های فعال",
     "ad-date": "تاریخ رد آگهی",
-    "reject-reason": "علت رد آگهی"
+    "reject-reason": "علت رد آگهی",
+    "reports-ad": "گزارش ها"
   },
   "question-answer-card": {
     "save-question-button": "ثبت پاسخ"

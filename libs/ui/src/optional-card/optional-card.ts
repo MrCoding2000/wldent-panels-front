@@ -20,13 +20,17 @@ import {NewAdvertisementRequest, OptionalCardsDataModel} from "@waldent-panels-f
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class OptionalCard {
+  @Input() hasHeader = true;
   @Input() optionalCardsSlideData!: OptionalCardsDataModel<any | NewAdvertisementRequest>[];
   @Input() optionalCardTemplate!: TemplateRef<any>;
   @Input() headerTitle!: string;
+  @Input() rightActionButtonTitle: string = ''
+  @Input() rightButtonClass: string = 'edit-button'
   @Input() actionButtonTitle!: string;
   @Input() isSliderCard: boolean = false;
 
   @Output() actionClick: EventEmitter<number> = new EventEmitter();
   constructor(public i18n: I18nService) {
+    this.rightActionButtonTitle = i18n.translate('optional-card.edit-ad');
   }
 }

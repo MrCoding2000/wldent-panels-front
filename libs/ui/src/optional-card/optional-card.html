@@ -31,10 +31,12 @@
     <swiper-slide [ngClass]="isSliderCard ? 'slider-card': 'simple-card'">
       <section
         class="optional-card-container flex flex-col items-end">
-        <header class="header-container flex items-center justify-end self-stretch">
-          <img src="{{slide.adImage}}" alt="">
-          <h3 class="title mx-2">{{ slide.productName }}</h3>
-        </header>
+        @if (hasHeader) {
+          <header class="header-container flex items-center justify-end self-stretch">
+            <img src="{{slide.adImage}}" alt="">
+            <h3 class="title mx-2">{{ slide.productName }}</h3>
+          </header>
+        }
         <!--Info-->
         <section class="optional-card-info-container w-full my-4">
           <div class="optional-card-info-row-container flex justify-between items-center self-stretch">
@@ -57,7 +59,8 @@
         <!--Buttons-->
         <section class="action-button-container w-full flex justify-between">
           <button
-            class="action-button edit-button flex justify-center items-center gap-2">{{ i18n.translate('optional-card.edit-ad') }}
+            class="action-button {{rightButtonClass}} flex justify-center items-center gap-2">
+            {{ rightActionButtonTitle }}
           </button>
           <button class="action-button flex justify-center items-center gap-2"
                   (click)="actionClick.emit(slide.id)">{{ actionButtonTitle }}
