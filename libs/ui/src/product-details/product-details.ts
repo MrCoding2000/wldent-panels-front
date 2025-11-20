@@ -20,6 +20,7 @@ export class ProductDetails {
   @Input() productMainInfoList!: { key: string, iconSrc: string, unitIconSrc?: string }[];
   @Input() productCompleteInfoList!: { key: string, iconSrc: string, unitIconSrc?: string }[];
   @Input() productData!: EditAdvertisementDataModel;
+  @Input() hasActionButtons = true;
 
   @Output() deleteImageId: EventEmitter<number> = new EventEmitter();
   @Output() productExistenceCheck: EventEmitter<boolean> = new EventEmitter();

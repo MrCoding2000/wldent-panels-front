@@ -6,14 +6,16 @@
       [title]="productData.name"
       (checkedChange)="productExistenceCheck.emit($event)">
     </lib-toggle-switch>
-    <div class="buttons-container grid grid-cols-3 gap-2 order-1 sm:order-2 my-3">
-      @for (actionButton of productDetailsActionButtons; track actionButton) {
-        <button class="text-xs sm:text-sm">{{ actionButton.title }}</button>
-      }
-      <button class="edit-button text-xs sm:text-sm" (click)="editProduct.emit()">
-        ویرایش
-      </button>
-    </div>
+    @if(hasActionButtons) {
+      <div class="buttons-container grid grid-cols-3 gap-2 order-1 sm:order-2 my-3">
+        @for (actionButton of productDetailsActionButtons; track actionButton) {
+          <button class="text-xs sm:text-sm">{{ actionButton.title }}</button>
+        }
+        <button class="edit-button text-xs sm:text-sm" (click)="editProduct.emit()">
+          ویرایش
+        </button>
+      </div>
+    }
   </header>
   <hr class="line"/>
   <!--Product Main Information-->
