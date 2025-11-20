@@ -2,7 +2,8 @@
   {
     "icon": "assets/images/user-panel/dashboard/mark.svg",
     "title": "درخواست های جدید",
-    "amount": 55
+    "amount": 55,
+    "routerLink": "/advertisement/new"
   },
   {
     "icon": "assets/images/user-panel/dashboard/mark.svg",
