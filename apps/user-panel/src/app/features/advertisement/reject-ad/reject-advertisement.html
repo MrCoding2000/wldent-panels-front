@@ -10,8 +10,10 @@
     [optionalCardsSlideData]="rejectAdvertisementData"
     [optionalCardTemplate]="optionalCardTemplate"
     [headerTitle]="i18n.translate('advertisement.reject-ad')"
+    [rightActionButtonTitle]="i18n.translate('optional-card.edit-ad')"
     [actionButtonTitle]="i18n.translate('optional-card.review-request')"
-    (actionClick)="onReviewRequest($event)">
+    (actionClick)="onReviewRequest($event)"
+    (onRightActionButtonClick)="onNavigateToEditAdvertisement($event)">
   </lib-optional-card>
 </section>
 

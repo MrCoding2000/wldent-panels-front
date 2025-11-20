@@ -4,6 +4,7 @@ import {I18nService} from "@waldent-panels-front/translate";
 import {AdvertisementCardModel, OptionalCardsDataModel} from "@waldent-panels-front/models";
 import {DashboardService} from "../../dashboard/service/dashboard.service";
 import {AdvertisementService} from "../service/advertisement.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-advertisement',
@@ -19,7 +20,7 @@ export class RejectAdvertisement implements OnInit {
   advertisementStatusList!: AdvertisementCardModel[];
   rejectAdvertisementData!: OptionalCardsDataModel<any>[];
 
-  constructor(public i18n: I18nService, private dashboardService: DashboardService, private advertisementService: AdvertisementService) {
+  constructor(public i18n: I18nService, private dashboardService: DashboardService, private advertisementService: AdvertisementService, private router: Router) {
   }
 
   ngOnInit() {
@@ -50,5 +51,11 @@ export class RejectAdvertisement implements OnInit {
    * @param id
    */
   onReviewRequest(id: number) {
+  }
+
+  onNavigateToEditAdvertisement(id: number) {
+    this.router.navigate(['advertisement/edit', {
+      id: id
+    }])
   }
 }
