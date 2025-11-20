@@ -59,6 +59,7 @@
         <!--Buttons-->
         <section class="action-button-container w-full flex justify-between">
           <button
+            (click)="onRightActionButtonClick.emit(slide.id)"
             class="action-button {{rightButtonClass}} flex justify-center items-center gap-2">
             {{ rightActionButtonTitle }}
           </button>

@@ -53,7 +53,7 @@ export class ActiveAdvertisement implements OnInit {
    * Edit Advertisement
    * @param id
    */
-  onEditAdvertisement(id: number) {
+  onNavigateToAdvertisementDetails(id: number) {
     this.router.navigate(['advertisement/details', {
       id: id
     }]).then()
@@ -65,5 +65,11 @@ export class ActiveAdvertisement implements OnInit {
    */
   onChangeAdExistenceStatus(id: number): void {
     console.log(id)
+  }
+
+  onNavigateToEditAdvertisement(id: number) {
+    this.router.navigate(['advertisement/edit', {
+      id: id
+    }]).then()
   }
 }

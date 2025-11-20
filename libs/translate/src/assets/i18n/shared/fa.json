@@ -28,7 +28,9 @@
     "review-request": "درخواست بازبینی",
     "create-discount": "ایجاد تخفیف",
     "report-mistake": "گزارش اشتباه",
-    "cancel-advertisement": "تعلیق آگهی"
+    "cancel-advertisement": "تعلیق آگهی",
+    "confirmation": "تایید",
+    "reject": "رد کردن"
   },
   "advertisement": {
     "reject-ad": "آگهی های رد شده",

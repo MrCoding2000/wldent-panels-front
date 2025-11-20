@@ -4,7 +4,8 @@
     [optionalCardsSlideData]="advertisementNewRequestCardsData"
     [optionalCardTemplate]="optionalCardTemplate"
     [headerTitle]="i18n.translate('advertisement.active-ad')"
-    [actionButtonTitle]="i18n.translate('optional-card.create-discount')"
+    [rightActionButtonTitle]="i18n.translate('optional-card.confirmation')"
+    [actionButtonTitle]="i18n.translate('optional-card.reject')"
     (actionClick)="onRejectRequest($event)">
   </lib-optional-card>
 </section>
