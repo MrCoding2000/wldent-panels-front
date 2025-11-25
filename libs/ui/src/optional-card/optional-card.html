@@ -60,12 +60,15 @@
         <section class="action-button-container w-full flex justify-between">
           <button
             (click)="onRightActionButtonClick.emit(slide.id)"
+            [ngClass]="hasSecondButton ? '':'mx-auto bg-transparent'"
             class="action-button {{rightButtonClass}} flex justify-center items-center gap-2">
             {{ rightActionButtonTitle }}
           </button>
-          <button class="action-button flex justify-center items-center gap-2"
-                  (click)="actionClick.emit(slide.id)">{{ actionButtonTitle }}
-          </button>
+          @if (hasSecondButton) {
+            <button class="action-button flex justify-center items-center gap-2"
+                    (click)="actionClick.emit(slide.id)">{{ actionButtonTitle }}
+            </button>
+          }
         </section>
       </section>
     </swiper-slide>

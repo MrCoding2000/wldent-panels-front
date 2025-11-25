@@ -1,0 +1,24 @@
+<section class="reported-advertisement-container">
+  <!--Filter-->
+  <lib-filter-bar></lib-filter-bar>
+  <!--Reports-->
+  <lib-optional-card
+    [hasHeader]="false"
+    [optionalCardsSlideData]="advertisementDetailsReportsCardsData"
+    [optionalCardTemplate]="optionalCardTemplate"
+    [headerTitle]="i18n.translate('advertisement.reports-ad')"
+    [rightActionButtonTitle]="i18n.translate('optional-card.check-advertisement')"
+    [rightButtonClass]="''"
+    [hasSecondButton]="false"
+    (onRightActionButtonClick)="onGoToReportedAdvertisement($event)">
+  </lib-optional-card>
+</section>
+
+<ng-template #optionalCardTemplate let-slide>
+  <section class="report-container">
+    <header>
+      <h4 class="title">{{ slide.reportReason }}</h4>
+    </header>
+    <p class="text my-3">{{ slide.reportContent }}</p>
+  </section>
+</ng-template>

@@ -28,6 +28,7 @@ export class OptionalCard {
   @Input() rightButtonClass: string = 'edit-button'
   @Input() actionButtonTitle!: string;
   @Input() isSliderCard: boolean = false;
+  @Input() hasSecondButton = true;
 
   @Output() actionClick: EventEmitter<number> = new EventEmitter();
   @Output() onRightActionButtonClick: EventEmitter<number> = new EventEmitter();
