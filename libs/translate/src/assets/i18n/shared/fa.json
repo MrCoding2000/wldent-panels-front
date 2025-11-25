@@ -30,7 +30,8 @@
     "report-mistake": "گزارش اشتباه",
     "cancel-advertisement": "تعلیق آگهی",
     "confirmation": "تایید",
-    "reject": "رد کردن"
+    "reject": "رد کردن",
+    "check-advertisement": "بررسی آگهی"
   },
   "advertisement": {
     "reject-ad": "آگهی های رد شده",
