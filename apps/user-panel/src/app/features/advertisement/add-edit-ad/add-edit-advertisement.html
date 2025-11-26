@@ -2,7 +2,7 @@
   <header class="add-edit-advertisement-header-container w-full hidden sm:flex justify-between items-center">
     <h5 class="title">ویژگی های اصلی کالا</h5>
     <div class="buttons-container">
-      <button>لغو</button>
+      <button (click)="onCancelEditAction()">لغو</button>
       <!--TODO: disabled-->
       <button class="submit disabled" (click)="onSubmitAddEditAdvertisementForm()">ثبت آگهی</button>
     </div>
@@ -121,39 +121,38 @@
         <label>توضیحات</label>
         <textarea class="description" placeholder="توضیحات محصول شما"></textarea>
       </div>
-      <hr class="line">
-      <h5 class="my-4">تگ ها</h5>
-      <!-- در بخش تگ‌ها -->
-      <section class="grid grid-cols-1 sm:grid-cols-2 gap-4" formArrayName="tagsList">
-        @for (tag of tagsList.controls; track tag; let index = $index) {
-          <div class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-3 items-end justify-start gap-3" [formGroupName]="index">
-            <div class="input-row-container flex flex-col col-span-full sm:col-span-3 lg:col-span-2">
-              <label>عنوان تگ</label>
-              <input
-                #tagInput
-                placeholder="برای مثال: مسواک"
-                formControlName="tagName"
-                (keydown)="onTagInputKeydown($event, index)">
-            </div>
-            @if (index === tagsList.length - 1) {
-              <button
-                class="button col-span-full sm:col-span-1"
-                [ngClass]="lastTagItemInvalid ? 'disabled-button':'add-button'"
-                (click)="onCreateTagItem()"
-                [disabled]="lastTagItemInvalid">
-                ثبت
-              </button>
-            } @else {
-              <button
-                type="button"
-                class="button col-span-full sm:col-span-1 remove-button"
-                (click)="onRemoveTagItem(index)">
-                حذف
-              </button>
-            }
-          </div>
-        }
-      </section>
+<!--      <hr class="line">-->
+<!--      <h5 class="my-4">تگ ها</h5>-->
+<!--      <section class="grid grid-cols-1 sm:grid-cols-2 gap-4" formArrayName="tagsList">-->
+<!--        @for (tag of tagsList.controls; track tag; let index = $index) {-->
+<!--          <div class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-3 items-end justify-start gap-3" [formGroupName]="index">-->
+<!--            <div class="input-row-container flex flex-col col-span-full sm:col-span-3 lg:col-span-2">-->
+<!--              <label>عنوان تگ</label>-->
+<!--              <input-->
+<!--                #tagInput-->
+<!--                placeholder="برای مثال: مسواک"-->
+<!--                formControlName="tagName"-->
+<!--                (keydown)="onTagInputKeydown($event, index)">-->
+<!--            </div>-->
+<!--            @if (index === tagsList.length - 1) {-->
+<!--              <button-->
+<!--                class="button col-span-full sm:col-span-1"-->
+<!--                [ngClass]="lastTagItemInvalid ? 'disabled-button':'add-button'"-->
+<!--                (click)="onCreateTagItem()"-->
+<!--                [disabled]="lastTagItemInvalid">-->
+<!--                ثبت-->
+<!--              </button>-->
+<!--            } @else {-->
+<!--              <button-->
+<!--                type="button"-->
+<!--                class="button col-span-full sm:col-span-1 remove-button"-->
+<!--                (click)="onRemoveTagItem(index)">-->
+<!--                حذف-->
+<!--              </button>-->
+<!--            }-->
+<!--          </div>-->
+<!--        }-->
+<!--      </section>-->
     </section>
   </form>
 </section>
