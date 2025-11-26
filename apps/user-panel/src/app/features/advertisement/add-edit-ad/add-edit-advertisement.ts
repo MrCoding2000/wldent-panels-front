@@ -1,8 +1,8 @@
-import {Component, ElementRef, Input, OnInit, QueryList, Type, ViewChild, ViewChildren} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, QueryList, Type, ViewChildren} from '@angular/core';
 import {ToggleSwitch} from "@waldent-panels-front/ui";
 import {AdvertisementService} from "../service/advertisement.service";
 import {FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {NgClass} from "@angular/common";
+import {CommonModule, Location, NgClass} from "@angular/common";
 import {Dialog} from "primeng/dialog";
 import {WaldentDialogService} from "@waldent-panels-front/services";
 
@@ -12,7 +12,8 @@ import {WaldentDialogService} from "@waldent-panels-front/services";
     ToggleSwitch,
     ReactiveFormsModule,
     NgClass,
-    Dialog
+    Dialog,
+    CommonModule
   ],
   standalone: true,
   templateUrl: './add-edit-advertisement.html',
@@ -30,7 +31,8 @@ export class AddEditAdvertisement implements OnInit {
   constructor(
     private advertisementService: AdvertisementService,
     private formBuilder: FormBuilder,
-    private waldentDialogService: WaldentDialogService) {
+    private waldentDialogService: WaldentDialogService,
+    private location: Location) {
   }
 
   ngOnInit() {
@@ -206,5 +208,9 @@ export class AddEditAdvertisement implements OnInit {
         this.onCreateTagItem();
       }
     }
+  }
+
+  onCancelEditAction() {
+    this.location.back();
   }
 }
