@@ -18,6 +18,7 @@
   {
     "icon": "assets/images/user-panel/dashboard/mark.svg",
     "title": "گزارش ها",
-    "amount": 12
+    "amount": 12,
+    "routerLink": "/advertisement/reports"
   }
 ]
